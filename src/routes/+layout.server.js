@@ -12,6 +12,6 @@ export const load = async () => {
 	});
 
 	return {
-		...data.websites
+		data: data.websites
 	};
 };
