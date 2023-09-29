@@ -17,7 +17,7 @@
 		<img src={logo} alt="logo vervoerregio" />
 		<form on:change|preventDefault={handleSubmit}>
 			<select bind:value={selectedPartner}>
-				<option value="">Selecteer Partner</option>
+				<option value="">Overzicht van partners</option>
 				{#each partners.data as partner}
 					<option value={partner.id}>{partner.titel}</option>
 				{/each}
