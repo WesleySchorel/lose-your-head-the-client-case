@@ -7,8 +7,6 @@
 	let params = $page.params;
 
 	let partners = data;
-
-	console.log(partners);
 </script>
 
 <main>

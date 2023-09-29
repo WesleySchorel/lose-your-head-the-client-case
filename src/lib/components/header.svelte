@@ -10,8 +10,6 @@
 	function handleSubmit() {
 		location = '/' + selectedPartner;
 	}
-
-	console.log(partners);
 </script>
 
 <header>
@@ -21,7 +19,7 @@
 			<select bind:value={selectedPartner}>
 				<option value="">Selecteer Partner</option>
 				{#each partners.data as partner}
-					<option value={partner.titel}>{partner.titel}</option>
+					<option value={partner.id}>{partner.titel}</option>
 				{/each}
 			</select>
 		</form>

@@ -1,7 +1,7 @@
 <script>
-    export let data
+	export let data;
 </script>
 
-<!-- <pre>
+<pre>
     {JSON.stringify(data, null, 2)}
-</pre> -->
+</pre>
