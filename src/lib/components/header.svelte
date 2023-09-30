@@ -23,6 +23,7 @@
 			</select>
 
 			{#if selectedPartner}
+				<span>/</span>
 				<select
 					bind:value={selectedUrl}
 					on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
@@ -58,7 +59,15 @@
 		gap: 1.5em;
 	}
 
+	form {
+		display: flex;
+		align-items: center;
+		gap: .5rem;
+	}
+
 	select {
+		max-width: 17rem;
+
 		background-image: url('$lib/assets/select_arrow_down.svg');
 		background-repeat: no-repeat;
 		background-size: 0.8em;
@@ -73,6 +82,11 @@
 		background-color: #2c2c2c;
 		color: #ffffff;
 		border: none;
+	}
+
+	span {
+		color: #ffffff;
+		font-size: 1.8rem;
 	}
 
 	.header-icons {
