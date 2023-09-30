@@ -27,7 +27,7 @@
 					bind:value={selectedUrl}
 					on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
 				>
-					<option value="">Overzicht van partners</option>
+					<option value="">Overzicht van urls</option>
 					{#each websites.urls as website}
 						<option value={website.id}>{website.url}</option>
 					{/each}
