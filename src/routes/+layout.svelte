@@ -6,10 +6,11 @@
 	export let data;
 	let params = $page.params;
 
-	let partners = data;
+	let partners = data.partnersData;
+	let websites = data.websitesData;
 </script>
 
 <main>
-	<Header {params} {partners} />
+	<Header {params} {partners} {websites}/>
 	<slot />
 </main>

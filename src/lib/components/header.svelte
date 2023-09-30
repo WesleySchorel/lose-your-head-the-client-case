@@ -6,23 +6,33 @@
 
 	export let params;
 	export let partners;
+	export let websites;
 	let selectedPartner = params.websiteUID ? params.websiteUID : '';
-
-	function handleSubmit() {
-		location = '/' + selectedPartner;
-	}
+	let selectedUrl = params.urlUID ? params.urlUID : '';
 </script>
 
 <header>
 	<section class="logo-select">
 		<img src={logo} alt="logo vervoerregio" />
-		<form on:change|preventDefault={handleSubmit}>
-			<select bind:value={selectedPartner}>
+		<form on:change|preventDefault>
+			<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
 				<option value="">Overzicht van partners</option>
-				{#each partners.partnersData as partner}
+				{#each partners as partner}
 					<option value={partner.id}>{partner.titel}</option>
 				{/each}
 			</select>
+
+			{#if selectedPartner}
+				<select
+					bind:value={selectedUrl}
+					on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
+				>
+					<option value="">Overzicht van partners</option>
+					{#each websites.urls as website}
+						<option value={website.id}>{website.url}</option>
+					{/each}
+				</select>
+			{/if}
 		</form>
 	</section>
 
