@@ -6,7 +6,8 @@
 
 	export let params;
 	export let partners;
-	let selectedPartner = params.websiteUID;
+	let selectedPartner = params.websiteUID ? params.websiteUID : '';
+
 	function handleSubmit() {
 		location = '/' + selectedPartner;
 	}
