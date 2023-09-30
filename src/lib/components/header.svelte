@@ -19,7 +19,7 @@
 		<form on:change|preventDefault={handleSubmit}>
 			<select bind:value={selectedPartner}>
 				<option value="">Overzicht van partners</option>
-				{#each partners.data as partner}
+				{#each partners.partnersData as partner}
 					<option value={partner.id}>{partner.titel}</option>
 				{/each}
 			</select>

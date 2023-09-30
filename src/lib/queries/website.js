@@ -3,6 +3,7 @@ export default function getQueryWebsite(id) {
         website(where: {id: "${id}"}) {
           titel
           urls {
+            id
             url
           }
         }

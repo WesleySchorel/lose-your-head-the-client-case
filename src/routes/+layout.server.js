@@ -4,7 +4,7 @@ import getQueryPartner from '$lib/queries/partner';
 export const load = async () => {
 	const queryProgram = getQueryPartner();
 
-	const data = await client({
+	const partnersData = await client({
 		query: queryProgram,
 		fetch: fetch,
 		endpoint:
@@ -12,6 +12,6 @@ export const load = async () => {
 	});
 
 	return {
-		data: data.websites
+		partnersData: partnersData.websites
 	};
 };
