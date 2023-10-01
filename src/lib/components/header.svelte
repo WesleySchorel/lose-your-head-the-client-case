@@ -18,7 +18,7 @@
 			<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
 				<option value="">Overzicht van partners</option>
 				{#each partners as partner}
-					<option value={partner.id}>{partner.titel}</option>
+					<option value={partner.slug}>{partner.titel}</option>
 				{/each}
 			</select>
 
@@ -30,7 +30,7 @@
 				>
 					<option value="">Overzicht van urls</option>
 					{#each websites.urls as website}
-						<option value={website.id}>{website.url}</option>
+						<option value={website.slug}>{website.slug}</option>
 					{/each}
 				</select>
 			{/if}

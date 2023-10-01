@@ -1,10 +1,11 @@
-export default function getQueryWebsite(id) {
+export default function getQueryWebsite(slug) {
 	return `query Website {
-        website(where: {id: "${id}"}) {
+        website(where: {slug: "${slug}"}) {
           titel
           urls {
             id
             url
+            slug
           }
         }
       }`;

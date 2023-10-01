@@ -1,9 +1,10 @@
-export default function getQueryUrl(id) {
+export default function getQueryUrl(slug) {
 	return `
   query Url {
-    url(where: {id: "${id}"}) {
+    url(where: {slug: "${slug}"}) {
       id
       url
+      slug
     }
   }
   `;

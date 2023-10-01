@@ -4,6 +4,7 @@ export default function getQueryPartner(){
         websites {
             id
             titel
+            slug
         }
     }`
 }

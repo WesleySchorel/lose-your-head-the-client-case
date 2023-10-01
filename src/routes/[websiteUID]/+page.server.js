@@ -7,7 +7,7 @@ export const load = async ({ params }) => {
 
 	const dataWebsite = await client({
 		query: queryWebsite,
-		variables: { id: websiteUID },
+		variables: { slug: websiteUID },
 		fetch: fetch,
 		endpoint:
 			'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clbe0zp4u2fkz01uj486xdza4/master'
