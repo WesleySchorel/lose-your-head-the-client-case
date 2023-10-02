@@ -7,6 +7,9 @@
     /* Text */
     --c-white: rgb(255, 255, 255);
 
+    /* body */
+    --c-background: rgb(30, 30, 30);
+
     /* Containers */
     --c-container: rgb(44, 44, 44);
     --c-container-stroke: rgb(69, 69, 69);
@@ -22,6 +25,11 @@
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
+}
+
+body{
+    background-color: var(--c-background);
+    color: var(--c-white);
 }
 
 /* @font-face {

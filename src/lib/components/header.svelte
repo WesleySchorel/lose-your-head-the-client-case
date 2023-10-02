@@ -13,7 +13,9 @@
 
 <header>
 	<section class="logo-select">
-		<img src={logo} alt="logo vervoerregio" />
+		<a href="/">
+			<img src={logo} alt="logo vervoerregio" />
+		</a>
 		<form on:change|preventDefault>
 			<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
 				<option value="">Overzicht van partners</option>
@@ -65,9 +67,11 @@
 		gap: .5rem;
 	}
 
-	select {
-		max-width: 17rem;
+	.logo-select a{
+		display: flex;
+	}
 
+	select {
 		background-image: url('$lib/assets/select_arrow_down.svg');
 		background-repeat: no-repeat;
 		background-size: 0.8em;
