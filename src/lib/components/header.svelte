@@ -1,14 +1,26 @@
+<script context="module">
+	let js = true;
+</script>
+
 <script>
 	// https://kit.svelte.dev/docs/assets
 	import logo from '$lib/assets/vervoerregio_amsterdam_logo.svg';
 	import informationIcon from '$lib/assets/information_icon.svg';
 	import darkmodeIcon from '$lib/assets/dark_mode_icon.svg';
 
+	import { enhance } from '$app/forms';
+	import { onMount } from 'svelte';
+
 	export let params;
 	export let partners;
 	export let websites;
 	let selectedPartner = params.websiteUID ? params.websiteUID : '';
 	let selectedUrl = params.urlUID ? params.urlUID : '';
+	let js = false;
+
+	onMount(() => {
+		js = true;
+	});
 </script>
 
 <header>
@@ -16,27 +28,30 @@
 		<a href="/">
 			<img src={logo} alt="logo vervoerregio" />
 		</a>
-		<form on:change|preventDefault>
-			<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
-				<option value="">Overzicht van partners</option>
-				{#each partners as partner}
-					<option value={partner.slug}>{partner.titel}</option>
-				{/each}
-			</select>
 
-			{#if selectedPartner}
-				<span>/</span>
-				<select
-					bind:value={selectedUrl}
-					on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
-				>
-					<option value="">Overzicht van urls</option>
-					{#each websites.urls as website}
-						<option value={website.slug}>{website.slug}</option>
+		{#if js == true}
+			<form on:change|preventDefault use:enhance={onsubmit}>
+				<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
+					<option value="">Overzicht van partners</option>
+					{#each partners as partner}
+						<option value={partner.slug}>{partner.titel}</option>
 					{/each}
 				</select>
-			{/if}
-		</form>
+
+				{#if selectedPartner}
+					<span>/</span>
+					<select
+						bind:value={selectedUrl}
+						on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
+					>
+						<option value="">Overzicht van urls</option>
+						{#each websites.urls as website}
+							<option value={website.slug}>{website.slug}</option>
+						{/each}
+					</select>
+				{/if}
+			</form>
+		{/if}
 	</section>
 
 	<section class="header-icons">
@@ -64,10 +79,10 @@
 	form {
 		display: flex;
 		align-items: center;
-		gap: .5rem;
+		gap: 0.5rem;
 	}
 
-	.logo-select a{
+	.logo-select a {
 		display: flex;
 	}
 
