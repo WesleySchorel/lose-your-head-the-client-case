@@ -26,8 +26,7 @@
 </script>
 
 
-
+<Header {params} {partners} {websites}/>
 <main>
-	<Header {params} {partners} {websites}/>
 	<slot />
 </main>
