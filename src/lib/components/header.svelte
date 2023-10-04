@@ -18,41 +18,44 @@
 	let selectedUrl = params.urlUID ? params.urlUID : '';
 	let js = false;
 
+	console.log(websites)
+
 	onMount(() => {
 		js = true;
 	});
 </script>
 
 <header>
-	<section class="logo-select">
-		<a href="/">
-			<img src={logo} alt="logo vervoerregio" />
-		</a>
+	<nav>
+		<section class="logo-select">
+			<a href="/">
+				<img src={logo} alt="logo vervoerregio" />
+			</a>
 
-		{#if js == true}
-			<form on:change|preventDefault use:enhance={onsubmit}>
-				<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
-					<option value="">Overzicht van partners</option>
-					{#each partners as partner}
-						<option value={partner.slug}>{partner.titel}</option>
-					{/each}
-				</select>
-
-				{#if selectedPartner}
-					<span>/</span>
-					<select
-						bind:value={selectedUrl}
-						on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
-					>
-						<option value="">Overzicht van urls</option>
-						{#each websites.urls as website}
-							<option value={website.slug}>{website.slug}</option>
+			<!-- {#if js == true} -->
+				<form on:change|preventDefault use:enhance={onsubmit}>
+					<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
+						<option value="">Overzicht van partners</option>
+						{#each partners.websites as partner}
+							<option value={partner.slug}>{partner.titel}</option>
 						{/each}
 					</select>
-				{/if}
-			</form>
-		{/if}
-	</section>
+
+					{#if selectedPartner}
+						<span>/</span>
+						<select
+							bind:value={selectedUrl}
+							on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
+						>
+							<option value="">Overzicht van urls</option>
+							{#each websites.urls as website}
+								<option value={website.slug}>{website.slug}</option>
+							{/each}
+						</select>
+					{/if}
+				</form>
+			<!-- {/if} -->
+		</section>
 
 		<section class="header-icons">
 			<a href="/info">
@@ -64,16 +67,15 @@
 
 	<section class="container-heading-1">
 		<h1>Partners</h1>
-	</section>	
+	</section>
 </header>
 
-
 <style>
-	header{
+	header {
 		display: flex;
 		flex-direction: column;
 	}
-	
+
 	nav {
 		display: flex;
 		justify-content: space-between;

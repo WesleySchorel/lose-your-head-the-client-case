@@ -3,5 +3,5 @@
 </script>
 
 <pre>
-    {JSON.stringify(data.data, null, 2)}
+    {JSON.stringify(data.url, null, 2)}
 </pre>
