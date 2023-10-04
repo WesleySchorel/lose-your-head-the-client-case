@@ -4,6 +4,7 @@ export default function getQueryPartner(gql){
         websites {
             id
             titel
+            slug
             homepage
         }
     }`

@@ -1,25 +1,30 @@
 <script>
 	import Header from '$lib/components/header.svelte';
-	import global from '../global.css'
+	import global from '../global.css';
 
+	import { page } from '$app/stores';
+	export let data;
+	let params = $page.params;
 
-    import { onNavigate } from '$app/navigation'
+	let partners = data.partnersData;
+	let websites = data.websitesData.website;
 
-    onNavigate((navigation) => {
-    if (!document.startViewTransition) return
+	console.log(websites);
+	import { onNavigate } from '$app/navigation';
 
-    return new Promise((resolve) => {
-        document.startViewTransition(async () => {
-            resolve()
-            await navigation.complete
-        })
-    })
-	})
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
 
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
-
-<Header />
+<Header {params} {partners} {websites} />
 <main>
 	<slot />
 </main>
