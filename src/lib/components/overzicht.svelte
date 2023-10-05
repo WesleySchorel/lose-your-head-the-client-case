@@ -5,6 +5,11 @@
 	import arrowRight from '$lib/assets/arrow_right.svg';
 </script>
 
+<form>
+	<label for="partner-search">Zoek een partner</label>
+	<input type="search" id="partner-search" placeholder="Connexxion">
+</form>
+
 <ul>
 	{#each data.websites as website}
 		<li>
@@ -30,6 +35,28 @@
 </ul>
 
 <style>
+	/* form */
+	form{
+		margin-bottom: 1em;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 1em;
+		font-weight: 600;
+	}
+
+	input{
+		padding: 0.5em;
+		border: 2px solid var(--c-border);
+		background-color: var(--c-container);
+		border-radius: 0.25em;
+		color: var(--c-white);
+		width: 8.5em;
+		font-size: 1em;
+		font-weight: 600;
+		padding-left: 0.75em;
+	}
+	/* form end */
 	ul {
 		list-style-type: none;
 		display: flex;
@@ -47,7 +74,7 @@
 		padding: 1em;
 		border-radius: 0.5em;
 		border: solid 1px var(--c-container-stroke);
-		min-width: 20em;
+		min-width: 20.7em;
 	}
 
 	.logo-partner-section {
@@ -67,14 +94,36 @@
 		font-size: 0.9em;
 	}
 
-	.progress-container{
+	/* progress bar */
+	.progress-container {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-end;
 		gap: 1em;
 		margin-top: 0.25em;
 	}
 
-	progress{
+	progress {
 		width: 100%;
+	}
+
+	progress[value] {
+		/* Reset the default appearance */
+		-webkit-appearance: none;
+		appearance: none;
+		height: 50%;
+	}
+
+	/* chrome/safari */
+	progress[value]::-webkit-progress-bar {
+		background-color: var(--c-container);
+		border: 1px solid var(--c-container-stroke);
+		border-radius: 0.5em;
+	}
+
+	progress[value]::-webkit-progress-value {
+		background-color: var(--c-pink);
+		border-radius: 0.5em;
 	}
 </style>

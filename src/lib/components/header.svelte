@@ -136,7 +136,7 @@
 		background-color: var(--c-container);
 		padding: 2em 1em;
 		border-top: 12px solid var(--c-pink);
-		margin: 0.75em;
+		margin: 1em 0.75em;
 		border-radius: 0.5em;
 	}
 
