@@ -18,12 +18,20 @@
 	let selectedUrl = params.urlUID ? params.urlUID : '';
 	let js = false;
 
-	console.log(websites)
-
 	onMount(() => {
 		js = true;
 	});
 </script>
+
+<svelte:head>
+	{#if selectedUrl}
+		<title>Toolboard voor {selectedPartner} {selectedUrl}</title>
+	{:else if selectedPartner != ''}
+		<title>Websites van {selectedPartner}</title>
+	{:else}
+		<title>Partners</title>
+	{/if}
+</svelte:head>
 
 <header>
 	<nav>
@@ -32,9 +40,13 @@
 				<img src={logo} alt="logo vervoerregio" />
 			</a>
 
-			<!-- {#if js == true} -->
-				<form on:change|preventDefault use:enhance={onsubmit}>
-					<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
+			{#if js == true}
+				<form method="POST" on:change|preventDefault use:enhance={onsubmit}>
+					<select
+						name="partner"
+						bind:value={selectedPartner}
+						on:change={(location = '/' + selectedPartner)}
+					>
 						<option value="">Overzicht van partners</option>
 						{#each partners.websites as partner}
 							<option value={partner.slug}>{partner.titel}</option>
@@ -44,6 +56,7 @@
 					{#if selectedPartner}
 						<span>/</span>
 						<select
+							name="website"
 							bind:value={selectedUrl}
 							on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
 						>
@@ -54,7 +67,7 @@
 						</select>
 					{/if}
 				</form>
-			<!-- {/if} -->
+			{/if}
 		</section>
 
 		<section class="header-icons">

@@ -1,15 +1,13 @@
 <script>
 	import Header from '$lib/components/header.svelte';
-	import global from '../global.css';
 
 	import { page } from '$app/stores';
 	export let data;
 	let params = $page.params;
 
 	let partners = data.partnersData;
-	let websites = data.websitesData.website;
+	let websites = data.websitesData ? data.websitesData.website : null;
 
-	console.log(websites);
 	import { onNavigate } from '$app/navigation';
 
 	onNavigate((navigation) => {
@@ -23,6 +21,10 @@
 		});
 	});
 </script>
+
+<svelte:head>
+	<link rel="stylesheet" href="../src/global.css" />
+</svelte:head>
 
 <Header {params} {partners} {websites} />
 <main>
