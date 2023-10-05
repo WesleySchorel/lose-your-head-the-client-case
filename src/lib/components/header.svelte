@@ -15,7 +15,7 @@
 	export let partners;
 	export let websites;
 	$: selectedPartner = params.websiteUID ? params.websiteUID : '';
-	let selectedUrl = params.urlUID ? params.urlUID : '';
+	$: selectedUrl = params.urlUID ? params.urlUID : '';
 	let js = false;
 
 	$: console.log(params.websiteUID);
@@ -31,7 +31,8 @@
 			<a href="/">
 				<img src={logo} alt="logo vervoerregio" />
 			</a>
-
+			<p>{selectedPartner}</p>
+			<p>{selectedUrl}</p>
 			{#each partners.websites as partner}
 				<a href=/{partner.slug}>{partner.titel}</a>
 			{/each}
