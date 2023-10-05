@@ -1,9 +1,7 @@
 <script>
-	export let data;
-
-    console.log(data)
+    export let data
 </script>
 
 <pre>
-    {JSON.stringify(data.websitesData, null, 2)}
+    {JSON.stringify(data, null, 2)}
 </pre>

@@ -1,28 +1,8 @@
-<script context="module">
-	let js = true;
-</script>
-
 <script>
 	// https://kit.svelte.dev/docs/assets
 	import logo from '$lib/assets/vervoerregio_amsterdam_logo.svg';
 	import informationIcon from '$lib/assets/information_icon.svg';
 	import darkmodeIcon from '$lib/assets/dark_mode_icon.svg';
-
-	import { enhance } from '$app/forms';
-	import { onMount } from 'svelte';
-
-	export let params;
-	export let partners;
-	export let websites;
-	let selectedPartner = params.websiteUID ? params.websiteUID : '';
-	let selectedUrl = params.urlUID ? params.urlUID : '';
-	let js = false;
-
-	console.log(websites)
-
-	onMount(() => {
-		js = true;
-	});
 </script>
 
 <header>
@@ -31,30 +11,10 @@
 			<a href="/">
 				<img src={logo} alt="logo vervoerregio" />
 			</a>
-
-			<!-- {#if js == true} -->
-				<form on:change|preventDefault use:enhance={onsubmit}>
-					<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
-						<option value="">Overzicht van partners</option>
-						{#each partners.websites as partner}
-							<option value={partner.slug}>{partner.titel}</option>
-						{/each}
-					</select>
-
-					{#if selectedPartner}
-						<span>/</span>
-						<select
-							bind:value={selectedUrl}
-							on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
-						>
-							<option value="">Overzicht van urls</option>
-							{#each websites.urls as website}
-								<option value={website.slug}>{website.slug}</option>
-							{/each}
-						</select>
-					{/if}
-				</form>
-			<!-- {/if} -->
+			<select>
+				<option value="/">Selecteer Partner</option>
+				<option value="gvb">GVB</option>
+			</select>
 		</section>
 
 		<section class="header-icons">
@@ -67,15 +27,16 @@
 
 	<section class="container-heading-1">
 		<h1>Partners</h1>
-	</section>
+	</section>	
 </header>
 
+
 <style>
-	header {
+	header{
 		display: flex;
 		flex-direction: column;
 	}
-
+	
 	nav {
 		display: flex;
 		justify-content: space-between;
@@ -87,12 +48,6 @@
 	.logo-select {
 		display: flex;
 		gap: 1.5em;
-	}
-
-	form {
-		display: flex;
-		align-items: center;
-		gap: 0.5rem;
 	}
 
 	.logo-select a {
@@ -114,11 +69,6 @@
 		background-color: #2c2c2c;
 		color: #ffffff;
 		border: none;
-	}
-
-	span {
-		color: #ffffff;
-		font-size: 1.8rem;
 	}
 
 	.header-icons {

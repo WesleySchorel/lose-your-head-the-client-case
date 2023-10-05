@@ -4,10 +4,8 @@ export default function getQueryWebsite(gql, slug){
         website(where: {slug: "${slug}"}) {
           titel
           urls {
-            id
             url
-            slug
           }
         }
-      }`;
+      }`
 }
