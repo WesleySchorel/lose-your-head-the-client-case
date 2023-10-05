@@ -1,3 +1,6 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap');
+
 :root {
 
     /* Main Colors */
@@ -42,8 +45,6 @@ main{
 } */
 
 /* Text styles */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;900&display=swap');
 
 h1 {
     font-size: 4rem;
