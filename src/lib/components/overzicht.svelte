@@ -27,7 +27,7 @@
 
 				<div class="progress-container">
 					<progress id="progress-partner" max="100" value="70" />
-					<label for="progress-partner">70%</label>
+					<label class="progress-percentage" for="progress-partner">70%</label>
 				</div>
 			</section>
 		</li>
@@ -125,5 +125,9 @@
 	progress[value]::-webkit-progress-value {
 		background-color: var(--c-pink);
 		border-radius: 0.5em;
+	}
+
+	.progress-percentage{
+		height: 85%;
 	}
 </style>
