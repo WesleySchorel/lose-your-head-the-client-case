@@ -14,11 +14,11 @@
 	export let params;
 	export let partners;
 	export let websites;
-	let selectedPartner = params.websiteUID ? params.websiteUID : '';
+	$: selectedPartner = params.websiteUID ? params.websiteUID : '';
 	let selectedUrl = params.urlUID ? params.urlUID : '';
 	let js = false;
 
-	console.log(websites)
+	$: console.log(params.websiteUID);
 
 	onMount(() => {
 		js = true;
@@ -32,29 +32,15 @@
 				<img src={logo} alt="logo vervoerregio" />
 			</a>
 
-			<!-- {#if js == true} -->
-				<form on:change|preventDefault use:enhance={onsubmit}>
-					<select bind:value={selectedPartner} on:change={(location = '/' + selectedPartner)}>
-						<option value="">Overzicht van partners</option>
-						{#each partners.websites as partner}
-							<option value={partner.slug}>{partner.titel}</option>
-						{/each}
-					</select>
+			{#each partners.websites as partner}
+				<a href=/{partner.slug}>{partner.titel}</a>
+			{/each}
 
-					{#if selectedPartner}
-						<span>/</span>
-						<select
-							bind:value={selectedUrl}
-							on:change={(location = '/' + selectedPartner + '/' + selectedUrl)}
-						>
-							<option value="">Overzicht van urls</option>
-							{#each websites.urls as website}
-								<option value={website.slug}>{website.slug}</option>
-							{/each}
-						</select>
-					{/if}
-				</form>
-			<!-- {/if} -->
+			{#if websites}
+				{#each websites.urls as website}
+					<a href=/{selectedPartner}/{website.slug}>{website.slug}</a>
+				{/each}
+			{/if}
 		</section>
 
 		<section class="header-icons">
