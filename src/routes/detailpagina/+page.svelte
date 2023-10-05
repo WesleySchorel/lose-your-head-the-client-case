@@ -12,7 +12,7 @@
 						<span class="goed-bezig">Goed bezig!</span>
 						<p>Je hebt al grote stappen gemaakt met principe Begrijpelijk!</p>
 					</div>
-				</section>
+				</section> 
 			</li>
 			<li>
 				<section>
