@@ -162,7 +162,7 @@
 		position: absolute;
 		background-color: #2c2c2c;
 		max-height: 0;
-		min-width: max-content;
+		width: 100%;
 		border-radius: 0.5em;
 		overflow: hidden;
 	}
