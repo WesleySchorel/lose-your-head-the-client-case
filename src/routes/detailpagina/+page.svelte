@@ -1,7 +1,3 @@
-<script>
-	import arrowRight from '$lib/assets/arrow_right.svg';
-</script>
-
 <section class="container-voortgang-1">
 	<h2>Voortgang</h2>
 	<div class="container-voortgang-2">
@@ -180,7 +176,7 @@
 	}
 
 	.principe p {
-		font-size: 1.5em;
+		font-size: 1.25em;
 		margin-bottom: 2rem;
         width: 80%;
 	}

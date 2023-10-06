@@ -1,28 +1,47 @@
 # Vervoerregio Amsterdam | Sprint 14
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+
+Live link: 
 
 ## Inhoudsopgave
 
   * [Beschrijving](#beschrijving)
   * [Kenmerken](#kenmerken)
   * [Installatie](#installatie)
-  * [Gebruik](#gebruik)
   * [Bronnen](#bronnen)
   * [Licentie](#licentie)
 
 ## Beschrijving
-<!-- In de Beschrijving staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+
+De Toolgankelijkheid website voor Vervoerregio Amsterdam waarmee medewerkers intern hun partners kunnen controleren op de toegankelijkheid van hun websites. 
+
+![Overview](https://github.com/WesleySchorel/lose-your-head-the-client-case/assets/112856287/b8584841-9648-4ee1-9f25-78a5951d33ae)
+
 
 ## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met Javascript gedaan en hoe? Misschien heb je een framwork of library gebruikt? -->
+
+Dit project is ontwikkeld door middel van Sveltekit. De inhoud wordt opgehaald door middel van een query uit Hygraph. De code wordt gehost op github en vervolgens door middel van Vercel live gezet. De code wordt gehost op GitHub. De live-versie van de website is beschikbaar op Vercel. Vercel is geïntegreerd met de GitHub Repository en genereert automatisch een nieuwe versie van de applicatie bij elke update op de main.
+
+Wij hebben de volgende technieken en technologiën gebruikt:
+
+* Svelte
+* Sveltekit
+* Hygraph
+* JS
+* CSS
+* Figma
 
 ## Installatie
-
-## Gebruik
+```
+1. Clone de repository
+2. Open de repo via github desktop
+3. Installeer npm packages d.m.v. npm install
+4. Run de localhost d.m.v. npm run dev
+```
 
 ## Bronnen
+
+[FDND agency](https://github.com/fdnd-agency/vervoerregio-amsterdam) <br>
+[Hygraph mutation](https://hygraph.com/docs/api-reference/content-api/mutations) <br>
 
 ## Licentie
 
