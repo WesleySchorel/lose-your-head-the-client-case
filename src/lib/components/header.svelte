@@ -14,6 +14,7 @@
 	export let params;
 	export let partners;
 	export let websites;
+	export let heading = 'Partners overzicht';
 
 	const faviconAPI =
 		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
@@ -40,11 +41,11 @@
 			<div class="dropdown">
 				<button>
 					{#if selectedPartner}
-					<img
-					width="24"
-					src="{faviconAPI}{selectedPartner.homepage}/&size=256"
-					alt=""
-				/>{selectedPartner.titel}
+						<img
+							width="24"
+							src="{faviconAPI}{selectedPartner.homepage}/&size=256"
+							alt=""
+						/>{selectedPartner.titel}
 					{:else}
 						Partners overzicht
 					{/if}
@@ -100,7 +101,15 @@
 	</nav>
 
 	<section class="container-heading-1">
-		<h1>Partners</h1>
+		{#if selectedPartner && selectedUrl}
+			<img width="70" src="{faviconAPI}{selectedPartner.homepage}/&size=256" alt="" />
+			<h1>{selectedPartner.titel}/{selectedUrl}</h1>
+		{:else if selectedPartner}
+			<img width="70" src="{faviconAPI}{selectedPartner.homepage}/&size=256" alt="" />
+			<h1>{selectedPartner.titel}</h1>
+		{:else}
+			<h1>{heading}</h1>
+		{/if}
 	</section>
 </header>
 
@@ -125,7 +134,7 @@
 	button {
 		display: flex;
 		align-items: center;
-		gap: .5rem;
+		gap: 0.5rem;
 		appearance: none;
 		padding: 1em 0.6em;
 		padding-right: 4em;
@@ -219,11 +228,21 @@
 
 	/* container heading 1 */
 	.container-heading-1 {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
 		background-color: var(--c-container);
-		padding: 2em 1em;
+		padding: 2em;
 		border-top: 12px solid var(--c-pink);
 		margin: 0.75em;
 		border-radius: 0.5em;
+	}
+
+	.container-heading-1 img {
+		/* padding: .5rem; */
+		box-shadow: 0px 0px 0px 8px #202020;
+		border-radius: 0.3rem;
+		background-color: #202020;
 	}
 
 	h1 {
