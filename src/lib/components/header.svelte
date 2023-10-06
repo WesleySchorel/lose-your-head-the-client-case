@@ -43,7 +43,7 @@
 							alt=""
 						/>{selectedPartner.titel}
 					{:else}
-						Partners overzicht
+						<span>Partners overzicht</span>
 					{/if}
 				</button>
 				<ul>
@@ -65,13 +65,13 @@
 			</div>
 
 			{#if websites}
-				<span>/</span>
+				<span class="seperator">/</span>
 				<div class="dropdown">
 					<button>
 						{#if selectedUrl}
 							{selectedUrl}
 						{:else}
-							Websites overzicht
+							<span>Websites overzicht</span>
 						{/if}
 					</button>
 					<ul>
@@ -111,11 +111,12 @@
 		border-bottom: 2px solid #454545;
 	}
 
-	span {
-		font-size: 1.4rem;
+	.seperator {
+		font-size: 1.5rem;
 	}
 
 	button {
+		position: relative;
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
@@ -130,6 +131,8 @@
 		width: 100%;
 		height: 3.5rem;
 		text-align: left;
+		box-shadow: 0px -20px 0px 0px #202020;
+		transition: .2s;
 	}
 
 	button::after {
@@ -137,12 +140,19 @@
 		position: absolute;
 		right: 5%;
 		scale: 1.3;
+		transition: 0.2s;
+	}
+
+	button span {
+		opacity: 0.6;
 	}
 
 	.dropdown {
 		position: relative;
 		display: inline-block;
 		min-width: 19rem;
+		height: max-content;
+		z-index: 1;
 	}
 
 	.dropdown img {
@@ -156,8 +166,15 @@
 		background-color: #2c2c2c;
 		max-height: 0;
 		width: 100%;
-		border-radius: 0.5em;
+		border-radius: 0 0 0.5em 0.5em;
 		overflow: hidden;
+		transform: translateY(-100%);
+		transition: .2s;
+		z-index: -1;
+	}
+
+	ul li:first-child {
+		border-bottom: 1px solid;
 	}
 
 	ul a {
@@ -171,6 +188,12 @@
 		display: block;
 	}
 
+	ul:has(a:focus) {
+		max-height: min-content;
+		min-width: max-content;
+		transform: translateY(0);
+	}
+
 	ul a:hover {
 		background-color: #606060;
 	}
@@ -178,16 +201,21 @@
 	.dropdown:hover ul {
 		max-height: min-content;
 		min-width: max-content;
+		transform: translateY(0);
 	}
 
 	.dropdown:hover button {
 		background-color: #2c2c2c;
-		transition: max-height 0.25s ease-in;
+		border-radius: 0.5em 0.5em 0 0;
+	}
+
+	button:has(a:focus) {
+		background-color: #2c2c2c;
+		border-radius: 0.5em 0.5em 0 0;
 	}
 
 	.dropdown:hover button::after {
-		rotate: 180deg;
-		top: 1.25rem;
+		transform: scale(-1, -1);
 	}
 
 	.logo-select {
