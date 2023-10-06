@@ -3,6 +3,7 @@ export default function getQueryWebsite(gql, slug){
     query Website {
         website(where: {slug: "${slug}"}) {
           titel
+          homepage
           urls {
             id
             url

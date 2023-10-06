@@ -9,7 +9,6 @@
 	let partners = data.partnersData;
 	$: websites = data.websitesData.website;
 
-	console.log(websites);
 	import { onNavigate } from '$app/navigation';
 
 	onNavigate((navigation) => {

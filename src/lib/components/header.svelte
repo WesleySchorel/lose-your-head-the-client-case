@@ -8,13 +8,11 @@
 	import informationIcon from '$lib/assets/information_icon.svg';
 	import darkmodeIcon from '$lib/assets/dark_mode_icon.svg';
 
-	import { enhance } from '$app/forms';
 	import { onMount } from 'svelte';
 
 	export let params;
 	export let partners;
 	export let websites;
-	export let heading = 'Partners overzicht';
 
 	const faviconAPI =
 		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
@@ -24,8 +22,6 @@
 		: '';
 	$: selectedUrl = params.urlUID ? params.urlUID : '';
 	let js = false;
-
-	$: console.log(selectedPartner.slug);
 
 	onMount(() => {
 		js = true;
@@ -99,18 +95,6 @@
 			<img src={darkmodeIcon} alt="darkmode icon" />
 		</section>
 	</nav>
-
-	<section class="container-heading-1">
-		{#if selectedPartner && selectedUrl}
-			<img width="70" src="{faviconAPI}{selectedPartner.homepage}/&size=256" alt="" />
-			<h1>{selectedPartner.titel}/{selectedUrl}</h1>
-		{:else if selectedPartner}
-			<img width="70" src="{faviconAPI}{selectedPartner.homepage}/&size=256" alt="" />
-			<h1>{selectedPartner.titel}</h1>
-		{:else}
-			<h1>{heading}</h1>
-		{/if}
-	</section>
 </header>
 
 <style>
@@ -224,28 +208,5 @@
 
 	.information-icon-img {
 		display: block;
-	}
-
-	/* container heading 1 */
-	.container-heading-1 {
-		display: flex;
-		gap: 1rem;
-		align-items: center;
-		background-color: var(--c-container);
-		padding: 2em;
-		border-top: 12px solid var(--c-pink);
-		margin: 0.75em;
-		border-radius: 0.5em;
-	}
-
-	.container-heading-1 img {
-		/* padding: .5rem; */
-		box-shadow: 0px 0px 0px 8px #202020;
-		border-radius: 0.3rem;
-		background-color: #202020;
-	}
-
-	h1 {
-		padding-left: 0.25em;
 	}
 </style>
