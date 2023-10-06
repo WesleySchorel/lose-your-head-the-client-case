@@ -4,12 +4,11 @@
 
 	import { page } from '$app/stores';
 	export let data;
-	let params = $page.params;
+	$: params = $page.params;
 
 	let partners = data.partnersData;
-	let websites = data.websitesData.website;
+	$: websites = data.websitesData.website;
 
-	console.log(websites);
 	import { onNavigate } from '$app/navigation';
 
 	onNavigate((navigation) => {

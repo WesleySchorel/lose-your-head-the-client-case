@@ -8,24 +8,6 @@ export async function load({ params }) {
 	const queryPartner = getQueryPartner(gql);
 	const queryWebsite = getQueryWebsite(gql, websiteUID);
 
-	// const partnersData = await hygraph({
-	// 	query: queryPartner,
-	// 	fetch: fetch,
-	// 	endpoint:
-	// 		'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clbe0zp4u2fkz01uj486xdza4/master'
-	// });
-    // return await hygraph.request(queryPartner)
-
-	// const websitesData = await hygraph({
-	// 	query: queryWebsite,
-	// 	fetch: fetch,
-	// 	endpoint:
-	// 		'https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clbe0zp4u2fkz01uj486xdza4/master'
-	// });
-
-    // return await hygraph.request(queryWebsite)
-
-
 	return {
 		partnersData: hygraph.request(queryPartner),
 		websitesData: hygraph.request(queryWebsite)
