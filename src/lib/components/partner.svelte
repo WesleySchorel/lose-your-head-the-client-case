@@ -1,75 +1,44 @@
 <script>
-	export let data;
+	export let website;
 
 	import logoPartner from '$lib/assets/gvb.png';
 	import arrowRight from '$lib/assets/arrow_right.svg';
 </script>
 
-<form>
-	<label for="partner-search">Zoek een partner</label>
-	<input type="search" id="partner-search" placeholder="Connexxion">
-</form>
+<li>
+	<a href="/gvb">
+		<section class="logo-partner-section">
+			<div>
+				<img src={logoPartner} alt="logo partner" />
+				<h2>{website.titel}</h2>
+			</div>
+			<img src={arrowRight} alt="arrow right" />
+		</section>
 
-<ul>
-	{#each data.websites as website}
-		<li>
-			<section class="logo-partner-section">
-				<div>
-					<img src={logoPartner} alt="logo partner" />
-					<h2>{website.titel}</h2>
-				</div>
-				<img src={arrowRight} alt="arrow right" />
-			</section>
+		<section class="more-info-section">
+			<span>Website: {website.homepage}</span>
+			<span>Laatst bewerkt: 12 min. geleden</span>
 
-			<section class="more-info-section">
-				<span>Website: {website.homepage}</span>
-				<span>Laatst bewerkt: 12 min. geleden</span>
-
-				<div class="progress-container">
-					<progress id="progress-partner" max="100" value="70" />
-					<label class="progress-percentage" for="progress-partner">70%</label>
-				</div>
-			</section>
-		</li>
-	{/each}
-</ul>
+			<div class="progress-container">
+				<progress id="progress-partner" max="100" value="70" />
+				<label class="progress-percentage" for="progress-partner">70%</label>
+			</div>
+		</section>
+	</a>
+</li>
 
 <style>
-	/* form */
-	form{
-		margin-bottom: 1em;
+	li{
 		display: flex;
-		justify-content: flex-end;
-		align-items: center;
-		gap: 1em;
-		font-weight: 600;
 	}
 
-	input{
-		padding: 0.5em;
-		border: 2px solid var(--c-border);
-		background-color: var(--c-container);
-		border-radius: 0.25em;
-		color: var(--c-white);
-		width: 8.5em;
-		font-size: 1em;
-		font-weight: 600;
-		padding-left: 0.75em;
-	}
-	/* form end */
-	ul {
-		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.75em;
-	}
-
-	li {
+	li a{
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
 		gap: 2.25em;
-
+		color: var(--c-text);
+		text-decoration: none;
 		background-color: var(--c-container);
 		padding: 1em;
 		border-radius: 0.5em;
@@ -127,7 +96,7 @@
 		border-radius: 0.5em;
 	}
 
-	.progress-percentage{
+	.progress-percentage {
 		height: 85%;
 	}
 </style>
