@@ -6,6 +6,3 @@
 </script>
 
 <Heading {heading} />
-<pre>
-    {JSON.stringify(data.websites, null, 2)}
-</pre>
