@@ -1,7 +1,3 @@
-<section class="container-heading-1">
-    <h1>Informatie</h1>
-</section>
-
 <div class="content-container-top">
     <section class="topLeft">
         <h3><span>Vervoerregio Amsterdam.</span> HvA</h3><br>
