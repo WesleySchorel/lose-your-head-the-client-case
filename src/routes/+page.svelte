@@ -27,6 +27,7 @@
 <style>
 	/* form */
 	form {
+		margin: 0 0.75em;
 		margin-bottom: 1em;
 		display: flex;
 		justify-content: flex-end;
@@ -52,5 +53,6 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.75em;
+		margin: 0 0.75em;
 	}
 </style>
