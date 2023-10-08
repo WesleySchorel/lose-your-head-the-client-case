@@ -6,7 +6,7 @@
 </script>
 
 <li>
-	<a href="/gvb">
+	<a href={website.slug}>
 		<section class="logo-partner-section">
 			<div>
 				<img src={logoPartner} alt="logo partner" />
