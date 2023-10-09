@@ -43,7 +43,7 @@
 		padding: 1em;
 		border-radius: 0.5em;
 		border: solid 1px var(--c-container-stroke);
-		min-width: 20.7em;
+		width: 100%;
 	}
 
 	.logo-partner-section {

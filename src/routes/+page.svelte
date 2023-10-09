@@ -1,6 +1,6 @@
 <script>
 	import Heading from '$lib/components/heading.svelte';
-	import Partner from '$lib/components/partner.svelte'
+	import Partner from '$lib/components/partner.svelte';
 	export let data;
 
 	let heading = { titel: 'Partners overzicht' };
@@ -20,7 +20,7 @@
 
 <ul>
 	{#each data.websites as website}
-    <Partner {website}/>
+		<Partner {website} />
 	{/each}
 </ul>
 
@@ -48,11 +48,12 @@
 		padding-left: 0.75em;
 	}
 	/* form end */
-	ul{
-		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
+	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
 		gap: 0.75em;
+		
+		list-style-type: none;
 		margin: 0 0.75em;
 	}
 </style>
