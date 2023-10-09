@@ -195,7 +195,11 @@
 	}
 
 	ul a:hover {
-		background-color: #606060;
+		background-color: #525252;
+	}
+
+	ul a:hover img {
+		transform: translateY(-3px);
 	}
 
 	.dropdown:hover ul {
