@@ -1,3 +1,12 @@
+<script>
+	import Heading from '$lib/components/heading.svelte';
+	export let data;
+
+    $: heading = {titel: data.websitesData.website.titel, homepage: data.websitesData.website.homepage, url: data.urlData.url.slug}
+	const principes = data.principesData.principes
+</script>
+
+<Heading {heading} />
 <section class="container-voortgang-1">
 	<h2>Voortgang</h2>
 	<div class="container-voortgang-2">
@@ -37,12 +46,12 @@
 
 <section class="container-principes">
 	<ul>
+		{#each principes as principe (principe.index)}
 		<li>
 			<div class="principe">
-				<h3><span>Waarneembaar. </span> Principe 1</h3>
+				<h3><span>{principe.titel}. </span> Principe {principe.index}</h3>
 				<p>
-					Informatie en componenten van de gebruikersinterface moeten toonbaar zijn aan gebruikers
-					op voor hen waarneembare wijze.
+					{principe.beschrijving.text}
 				</p>
 				<div class="progress-container">
 					<progress id="progress-partner" max="25" value="8" />
@@ -50,49 +59,16 @@
 				</div>
 			</div>
 		</li>
-		<li>
-			<div class="principe">
-				<h3><span>Waarneembaar. </span> Principe 2</h3>
-				<p>
-					Informatie en componenten van de gebruikersinterface moeten toonbaar zijn aan gebruikers
-					op voor hen waarneembare wijze.
-				</p>
-				<div class="progress-container">
-					<progress id="progress-partner" max="25" value="23" />
-					<label for="progress-partner">23/25</label>
-				</div>
-			</div>
-		</li>
-		<li>
-			<div class="principe">
-				<h3><span>Waarneembaar. </span> Principe 3</h3>
-				<p>
-					Informatie en componenten van de gebruikersinterface moeten toonbaar zijn aan gebruikers
-					op voor hen waarneembare wijze.
-				</p>
-				<div class="progress-container">
-					<progress id="progress-partner" max="25" value="18" />
-					<label for="progress-partner">18/25</label>
-				</div>
-			</div>
-		</li>
-		<li>
-			<div class="principe">
-				<h3><span>Waarneembaar. </span> Principe 4</h3>
-				<p>
-					Informatie en componenten van de gebruikersinterface moeten toonbaar zijn aan gebruikers
-					op voor hen waarneembare wijze.
-				</p>
-				<div class="progress-container">
-					<progress id="progress-partner" max="25" value="3" />
-					<label for="progress-partner">3/25</label>
-				</div>
-			</div>
-		</li>
+		{/each}
 	</ul>
 </section>
 
 <style>
+
+	:global(*) {
+		box-sizing: border-box;
+	}
+
 	h2 {
 		font-size: 1.5em;
 		padding-left: 1em;
@@ -158,6 +134,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		border-radius: 0.5em;
+		padding-bottom: 1em;
 	}
 
     .container-principes  ul {
@@ -167,8 +144,10 @@
 	}
 
 	.container-principes  li {
+		padding-bottom: 1em;
 		border-radius: 0.5em;
 		max-width: 50%;
+		min-width: 50%;
 	}
 
 	span {
@@ -187,6 +166,8 @@
 		/* border-top: 12px solid var(--c-pink); */
 		margin: 0.75em;
 		border-radius: 0.5em;
+		height: 100%;
+
 	}
 
 	.progress-container {
