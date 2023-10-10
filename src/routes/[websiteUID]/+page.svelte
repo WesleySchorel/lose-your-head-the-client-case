@@ -11,34 +11,52 @@
 	};
 
 	// data voor websites component
-	let websites = data.websitesData.website.urls
-	let overzicht = data.websitesData.website
-	let params = $page.params.websiteUID
+	let websites = data.websitesData.website.urls;
+	let overzicht = data.websitesData.website;
+	let params = $page.params.websiteUID;
 </script>
 
 <Heading {heading} />
 
-<form>
-	<label for="partner-search">Zoek een partner</label>
-	<input
-		type="search"
-		id="partner-search"
-		placeholder="Connexxion"
-		on:input={(e) => console.log(e)}
-	/>
-</form>
+<section>
+	<button>Project toevoegen</button>
+	<form>
+		<label for="partner-search">Zoek een partner</label>
+		<input
+			type="search"
+			id="partner-search"
+			placeholder="Connexxion"
+			on:input={(e) => console.log(e)}
+		/>
+	</form>
+</section>
 
 <ul>
 	{#each websites as website}
-	<Websites {website} {overzicht} {params}/>
+		<Websites {website} {overzicht} {params} />
 	{/each}
 </ul>
 
 <style>
-/* form */
-form {
+	section{
+		display: flex;
+		justify-content: space-between;
 		margin: 0 0.75em;
 		margin-bottom: 1em;
+	}
+
+	button{
+		border-radius: 0.25em;
+		padding: 0.75em 1.25em;
+		color: var(--c-white);
+		background-color: var(--c-modal-button);
+		border: none;
+		font-weight: 600;
+		font-size: 1em;
+	}
+
+	/* form */
+	form {
 		display: flex;
 		justify-content: flex-end;
 		align-items: center;
@@ -62,7 +80,7 @@ form {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
 		gap: 0.75em;
-		
+
 		list-style-type: none;
 		margin: 0 0.75em;
 	}
