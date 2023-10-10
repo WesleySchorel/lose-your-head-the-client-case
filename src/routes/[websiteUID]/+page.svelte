@@ -11,9 +11,9 @@
 	};
 
 	// data voor websites component
-	let websites = data.websitesData.website.urls;
-	let overzicht = data.websitesData.website;
-	let params = $page.params.websiteUID;
+	$: websites = data.websitesData.website.urls;
+	$: overzicht = data.websitesData.website;
+	$: params = $page.params.websiteUID;
 </script>
 
 <Heading {heading} />
