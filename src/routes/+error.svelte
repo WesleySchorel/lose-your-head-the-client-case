@@ -6,7 +6,7 @@
 	<h1>{$page.status}: {$page.error.message}</h1>
 </section>
 
-<div class="container-heading-1">
+<div class="content-container">
 	<h3><span>Oeps!</span> Er is iets mis gegaan.</h3>
 	<br />
 	<p>
@@ -38,11 +38,11 @@
 		color: var(--c-pink);
 	}
 
-	.container-heading-1 {
+	/* content container */
+	.content-container {
 		padding: 2em;
 		width: 50%;
 		background-color: var(--c-container);
-		/* border-top: 12px solid var(--c-pink); */
 		margin: 0.75em;
 		border-radius: 0.5em;
 	}
@@ -62,5 +62,11 @@
 
 	a:hover {
         transform: translateY(-3px)
+	}
+
+	@media only screen and (max-width: 1000px) {
+		.content-container{
+			width: 90%;
+		}
 	}
 </style>

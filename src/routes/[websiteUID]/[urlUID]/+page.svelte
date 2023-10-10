@@ -1,11 +1,183 @@
 <script>
-    import Heading from '$lib/components/heading.svelte';
+	import Heading from '$lib/components/heading.svelte';
 	export let data;
 
-    $: heading = {titel: data.websitesData.website.titel, homepage: data.websitesData.website.homepage, url: data.url.slug}
+    $: heading = {titel: data.websitesData.website.titel, homepage: data.websitesData.website.homepage, url: data.urlData.url.slug}
+	const principes = data.principesData.principes
 </script>
 
 <Heading {heading} />
-<pre>
-    {JSON.stringify(data.url, null, 2)}
-</pre>
+<section class="container-voortgang-1">
+	<h2>Voortgang</h2>
+	<div class="container-voortgang-2">
+		<ul>
+			<li>
+				<section>
+					<div>
+						<span class="goed-bezig">Goed bezig!</span>
+						<p>Je hebt al grote stappen gemaakt met principe Begrijpelijk!</p>
+					</div>
+				</section> 
+			</li>
+			<li>
+				<section>
+					<div>
+						<span class="tip">Tip</span>
+						<p>
+							Kijk ook eens naar succescriteria 1.5.2. Deze is namelijk eenvoudig toe te passen!
+						</p>
+					</div>
+				</section>
+			</li>
+			<li>
+				<section>
+					<div>
+						<span class="tip">Tip</span>
+						<p>
+							Succescriteria 1.2.3 zal de toegankelijkheid op je website sterk verbeteren door het
+							contrast gebruik.
+						</p>
+					</div>
+				</section>
+			</li>
+		</ul>
+	</div>
+</section>
+
+<section class="container-principes">
+	<ul>
+		{#each principes as principe (principe.index)}
+		<li>
+			<div class="principe">
+				<h3><span>{principe.titel}. </span> Principe {principe.index}</h3>
+				<p>
+					{principe.beschrijving.text}
+				</p>
+				<div class="progress-container">
+					<progress id="progress-partner" max="25" value="8" />
+					<label for="progress-partner">8/25</label>
+				</div>
+			</div>
+		</li>
+		{/each}
+	</ul>
+</section>
+
+<style>
+
+	:global(*) {
+		box-sizing: border-box;
+	}
+
+	h2 {
+		font-size: 1.5em;
+		padding-left: 1em;
+		margin-top: 1rem;
+	}
+
+    /* VOORTGANG */
+
+	.container-voortgang-1 {
+		background-color: var(--c-container);
+		padding: 1em 1em;
+		margin: 0.75em;
+		border-radius: 0.5em;
+	}
+
+	.container-voortgang-2 {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0.75em;
+		border-radius: 0.5em;
+	}
+
+    .container-voortgang-2 p {
+		font-size: 1.25em;
+		padding-left: 0.25em;
+		max-width: 16rem;
+	}
+
+	.container-voortgang-2 ul {
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75em;
+		margin: 0.75em;
+	}
+
+	.container-voortgang-2 li {
+		background-color: var(--c-container-stroke);
+		padding: 1em;
+		border-radius: 0.5em;
+		min-width: 16em;
+	}
+
+    /* VOORTGANG PRESTATIES */
+
+	.goed-bezig {
+		color: var(--c-green);
+		font-size: 1.25em;
+		padding-left: 0.25em;
+	}
+
+	.tip {
+		color: var(--c-orange);
+		font-size: 1.25em;
+		padding-left: 0.25em;
+	}
+
+
+
+    /* PRINCIPES */
+
+	.container-principes {
+		display: flex;
+		flex-wrap: wrap;
+		border-radius: 0.5em;
+		padding-bottom: 1em;
+	}
+
+    .container-principes  ul {
+		list-style-type: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.container-principes  li {
+		padding-bottom: 1em;
+		border-radius: 0.5em;
+		max-width: 50%;
+		min-width: 50%;
+	}
+
+	span {
+		color: var(--c-pink);
+	}
+
+	.principe p {
+		font-size: 1.25em;
+		margin-bottom: 2rem;
+        width: 80%;
+	}
+
+	.principe {
+		padding: 2.5em;
+		background-color: var(--c-container);
+		/* border-top: 12px solid var(--c-pink); */
+		margin: 0.75em;
+		border-radius: 0.5em;
+		height: 100%;
+
+	}
+
+	.progress-container {
+		display: flex;
+		justify-content: space-between;
+		gap: 1em;
+		margin-top: 0.25em;
+	}
+
+	progress {
+		width: 80%;
+	}
+</style>
