@@ -144,7 +144,7 @@
 	}
 
 	.container-principes  li {
-		padding-bottom: 1em;
+		padding-bottom: 1.5em;
 		border-radius: 0.5em;
 		max-width: 50%;
 		min-width: 50%;
@@ -163,11 +163,10 @@
 	.principe {
 		padding: 2.5em;
 		background-color: var(--c-container);
-		/* border-top: 12px solid var(--c-pink); */
 		margin: 0.75em;
 		border-radius: 0.5em;
 		height: 100%;
-
+		border: solid 1px var(--c-container-stroke);
 	}
 
 	.progress-container {
