@@ -3,6 +3,19 @@
 
 	import logoPartner from '$lib/assets/gvb.png';
 	import arrowRight from '$lib/assets/arrow_right.svg';
+
+	import { onMount } from 'svelte';
+
+	let labelValue;
+	let progressbar;
+
+	// runs after the component is first rendered to the DOM.
+	onMount(() => {
+		let random = Math.floor(Math.random() * 100);
+		
+		progressbar.value = random;
+		labelValue.innerHTML = random + '%'
+	});
 </script>
 
 <li>
@@ -20,19 +33,19 @@
 			<span>Laatst bewerkt: 12 min. geleden</span>
 
 			<div class="progress-container">
-				<progress id="progress-partner" max="100" value="70" />
-				<label class="progress-percentage" for="progress-partner">70%</label>
+				<progress id="progress-partner" max="100" value="0" bind:this={progressbar} />
+				<label class="progress-percentage" for="progress-partner" bind:this={labelValue}>0%</label>
 			</div>
 		</section>
 	</a>
 </li>
 
 <style>
-	li{
+	li {
 		display: flex;
 	}
 
-	li a{
+	li a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -94,6 +107,7 @@
 	progress[value]::-webkit-progress-value {
 		background-color: var(--c-pink);
 		border-radius: 0.5em;
+		transition: 2s ease-out;
 	}
 
 	.progress-percentage {
