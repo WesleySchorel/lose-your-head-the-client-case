@@ -21,11 +21,11 @@
 <section>
 	<button>Project toevoegen</button>
 	<form>
-		<label for="partner-search">Zoek een partner</label>
+		<label for="partner-search">Zoek een website</label>
 		<input
 			type="search"
 			id="partner-search"
-			placeholder="Connexxion"
+			placeholder="Home"
 			on:input={(e) => console.log(e)}
 		/>
 	</form>
