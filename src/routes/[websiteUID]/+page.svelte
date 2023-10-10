@@ -11,9 +11,9 @@
 	};
 
 	// data voor websites component
-	let websites = data.websitesData.website.urls;
-	let overzicht = data.websitesData.website;
-	let params = $page.params.websiteUID;
+	$: websites = data.websitesData.website.urls;
+	$: overzicht = data.websitesData.website;
+	$: params = $page.params.websiteUID;
 </script>
 
 <Heading {heading} />
@@ -21,11 +21,11 @@
 <section>
 	<button>Project toevoegen</button>
 	<form>
-		<label for="partner-search">Zoek een partner</label>
+		<label for="partner-search">Zoek een website</label>
 		<input
 			type="search"
 			id="partner-search"
-			placeholder="Connexxion"
+			placeholder="Home"
 			on:input={(e) => console.log(e)}
 		/>
 	</form>
