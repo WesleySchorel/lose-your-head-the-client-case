@@ -24,7 +24,8 @@
     <section class="left-container">
         <h3>is uw website al toegankelijk?</h3><br>
         <p>
-            Dat moet al of moet binnen 2 jaar! Voor overheden is dit al verplicht. En vanaf 2025 mo et iedere nieuwe website en app digitaal toegankelijk zijn.
+            Binnen 2025 moet dit al! Voor overheden is dit al verplicht. En vanaf 2025 moet iedere nieuwe website en app digitaal toegankelijk zijn.
+            Dit moet volgens het EAA (European Accessibility Act). Dit zou er mee moeten helpen dat iedereen elke website zou kunnen bezoeken, niet uitmakende dat iemand een beperking heeft
         </p>
     </section>
 
@@ -90,7 +91,7 @@
 }
 
 .text-image {
-    width: 15em;
+    height: 13em;
 }
 
 .top-container, .left-container, .right-container, .bot-container {
@@ -105,15 +106,16 @@ span {
     color: var(--c-pink);
 }
 
-.text-container {
+/* .text-container {
     max-width: 50em;
-}
+} */
 
 .image-container {
     margin-left: auto;
+    align-self: center;
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 800px) {
   .content-container{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -125,7 +127,7 @@ span {
   }
 
   .text-image {
-    width: 15em;
+    height: 10em;
     }
 }
 
