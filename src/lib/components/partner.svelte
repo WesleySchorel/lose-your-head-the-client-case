@@ -57,6 +57,11 @@
 		border-radius: 0.5em;
 		border: solid 1px var(--c-container-stroke);
 		width: 100%;
+		transition: 0.25s ease;
+	}
+
+	li a:hover {
+		border: solid 1px var(--c-pink);
 	}
 
 	.logo-partner-section {
