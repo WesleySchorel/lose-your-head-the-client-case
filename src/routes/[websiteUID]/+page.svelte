@@ -53,7 +53,7 @@
 		border: none;
 		font-weight: 600;
 		font-size: 1em;
-		transition: 0.1s;
+		transition: 0.3s;
 		cursor: pointer;
 	}
 
