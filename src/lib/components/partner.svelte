@@ -3,6 +3,18 @@
 
 	import arrowRight from '$lib/assets/arrow_right.svg';
 
+	import { onMount } from 'svelte';
+
+	let labelValue;
+	let progressbar;
+
+	// runs after the component is first rendered to the DOM.
+	onMount(() => {
+		let random = Math.floor(Math.random() * 100);
+		
+		progressbar.value = random;
+		labelValue.innerHTML = random + '%'
+	});
 	const faviconAPI =
 		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
 </script>
@@ -25,8 +37,8 @@
 			<span>Laatst bewerkt: 12 min. geleden</span>
 
 			<div class="progress-container">
-				<progress id="progress-partner" max="100" value="70" />
-				<label class="progress-percentage" for="progress-partner">70%</label>
+				<progress id="progress-partner" max="100" value="0" bind:this={progressbar} />
+				<label class="progress-percentage" for="progress-partner" bind:this={labelValue}>0%</label>
 			</div>
 		</section>
 	</a>
@@ -49,6 +61,11 @@
 		border-radius: 0.5em;
 		border: solid 1px var(--c-container-stroke);
 		width: 100%;
+		transition: 0.25s ease;
+	}
+
+	li a:hover {
+		border: solid 1px var(--c-pink);
 	}
 
 	.logo-partner-section {
@@ -98,6 +115,7 @@
 	progress[value]::-webkit-progress-value {
 		background-color: var(--c-pink);
 		border-radius: 0.5em;
+		transition: 1s ease-out;
 	}
 
 	.progress-percentage {
