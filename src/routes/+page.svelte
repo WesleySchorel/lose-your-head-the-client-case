@@ -51,9 +51,9 @@
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-		gap: 0.75em;
-		
+		gap: 1em;
+
 		list-style-type: none;
-		margin: 0 0.75em;
+		margin: 0 1em;
 	}
 </style>

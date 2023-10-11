@@ -88,6 +88,8 @@
     "top top"
     "left right"
     "bot bot";
+    margin: 1em 1em;
+    gap: 1em;
 }
 
 .text-image {
@@ -98,7 +100,6 @@
     padding: 2em;
     background-color: var(--c-container);
 	/* border-top: 12px solid var(--c-pink); */
-	margin: 0.75em;
 	border-radius: 0.5em;
 }
 
