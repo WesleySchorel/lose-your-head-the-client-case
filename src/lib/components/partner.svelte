@@ -22,7 +22,6 @@
 		</section>
 
 		<section class="more-info-section">
-			<span>Website: {website.homepage}</span>
 			<span>Laatst bewerkt: 12 min. geleden</span>
 
 			<div class="progress-container">
