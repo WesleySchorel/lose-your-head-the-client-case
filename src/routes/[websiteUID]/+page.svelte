@@ -47,7 +47,7 @@
 
 	button{
 		border-radius: 0.25em;
-		padding: 0.75em 1.25em;
+		padding: 0.5em 1em;
 		color: var(--c-white);
 		background-color: var(--c-modal-button);
 		border: none;
