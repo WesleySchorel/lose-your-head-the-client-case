@@ -6,24 +6,18 @@
 	let heading = { titel: 'Partners overzicht' };
 
 	// form submit
-	let input = '';
-	let allWebsites;
-
+	let input;
 	function submit() {
-		console.log(input.toUpperCase());
-		console.log(allWebsites)
-		// let studentContainer = document.querySelectorAll('.member');
-			// // selecteer input
-			// let input = document.querySelector('input').value.toUpperCase();
+		let websites = document.querySelectorAll('.website')
+		let names = document.querySelectorAll('.name')
 
-			// for (let i = 0; i < studentContainer.length; i++) {
-			// 	// if studentcontainer h2 doesnt include input => make the containers invisible
-			// 	if (!studentContainer[i].innerText.toUpperCase().includes(input)) {
-			// 		studentContainer[i].classList.add('container-off');
-			// 	} else {
-			// 		studentContainer[i].classList.remove('container-off');
-			// 	}
-			// }
+		websites.forEach(website => {
+			if(!websites.innerText.toUpperCase().includes(input.toUpperCase())){
+				website.classList.add('container-off');
+			}else{
+				website.classList.remove('container-off');
+			}
+		});
 	}
 </script>
 
@@ -34,9 +28,9 @@
 	<input type="search" id="partner-search" placeholder="Connexxion" bind:value={input} />
 </form>
 
-<ul bind:this={allWebsites}>
+<ul>
 	{#each data.websites as website}
-		<Partner {website}/>
+		<Partner {website} />
 	{/each}
 </ul>
 
