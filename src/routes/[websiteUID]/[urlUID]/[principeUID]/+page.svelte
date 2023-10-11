@@ -2,16 +2,17 @@
 	import Heading from '$lib/components/heading.svelte';
 	export let data;
 
-    $: heading = {titel: data.websitesData.website.titel, homepage: data.urlData.url.url, url: data.urlData.url.slug}
+	$: heading = {
+		titel: data.websitesData.website.titel,
+		homepage: data.urlData.url.url,
+		url: data.urlData.url.slug
+	};
 	const toolboardData = data.toolboardData;
 	const richtlijnen = toolboardData.principe.richtlijnen;
-	let checked
 
 	const checkedSuccescriteria = toolboardData.url.checks[0]
 		? toolboardData.url.checks[0].succescriteria
 		: [];
-
-	console.log(checkedSuccescriteria);
 </script>
 
 <Heading {heading} />
@@ -24,7 +25,10 @@
 					<h3>{succescriterium.titel}</h3>
 					<p>{succescriterium.index}</p>
 					<p>{succescriterium.id}</p>
-					<input type="checkbox" checked={checkedSuccescriteria.find(e => e.id === succescriterium.id)}>
+					<input
+						type="checkbox"
+						checked={checkedSuccescriteria.find((e) => e.id === succescriterium.id)}
+					/>
 				</label>
 			{/each}
 		</section>
