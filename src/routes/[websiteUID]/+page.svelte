@@ -53,12 +53,12 @@
 		border: none;
 		font-weight: 600;
 		font-size: 1em;
-		transition: 0.4s;
+		transition: 0.1s;
 		cursor: pointer;
 	}
 
 	button:hover {
-		background-color: var(--c-magenta);
+		opacity: 0.75;
 	}
 
 	/* form */

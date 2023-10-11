@@ -10,11 +10,11 @@
 	<h3><span>Oeps!</span> Er is iets mis gegaan.</h3>
 	<br>
 	<p>
-		De pagina die je zoekt, is helaas niet gevonden. Misschien ben je een verkeerde afslag genomen
+		De pagina die je zoekt, is helaas niet gevonden. Misschien heb je een verkeerde afslag genomen
 		of is er iets misgegaan tijdens het navigeren van onze tool. Probeer het opnieuw om op de juiste
 		pagina te belanden.
 	</p>
-	<a href="/">Opnieuw proberen</a>
+	<a href="/">Terug naar home</a>
 </div>
 
 <style>
@@ -62,10 +62,10 @@
 		color: #fff;
 		background-color: #636363;
 		border-radius: 4px;
-		transition: 0.4s;
+		transition: 0.3s;
 	}
 
 	a:hover {
-        background-color: var(--c-magenta);
+        opacity: 0.75;
 	}
 </style>
