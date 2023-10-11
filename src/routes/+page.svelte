@@ -56,5 +56,6 @@
 
 		list-style-type: none;
 		margin: 0 1em;
+		margin-bottom: 1em;
 	}
 </style>

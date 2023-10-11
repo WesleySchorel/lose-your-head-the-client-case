@@ -70,14 +70,7 @@
 		box-sizing: border-box;
 	}
 
-	h2 {
-		font-size: 1.5em;
-		padding-left: 1em;
-		margin-top: 1rem;
-	}
-
     /* VOORTGANG */
-
 	.container-voortgang-1 {
 		background-color: var(--c-container);
 		padding: 1em 1em;
@@ -132,13 +125,14 @@
 		margin-bottom: .25em;
 	}
 
-    .container-principes  ul {
+    .container-principes ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(40em, 1fr));
 		gap: 1em;
 
 		list-style-type: none;
 		margin: 0 1em;
+		margin-bottom: 1em;
 	}
 
 	.container-principes  li {

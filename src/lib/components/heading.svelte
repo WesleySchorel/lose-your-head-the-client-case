@@ -33,8 +33,4 @@
 		border-radius: 0.3rem;
 		background-color: #202020;
 	}
-
-	h1 {
-		padding-left: 0.25em;
-	}
 </style>
