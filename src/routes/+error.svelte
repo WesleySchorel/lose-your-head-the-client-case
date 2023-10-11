@@ -8,7 +8,7 @@
 
 <div class="content-container">
 	<h3><span>Oeps!</span> Er is iets mis gegaan.</h3>
-	<br />
+	<br>
 	<p>
 		De pagina die je zoekt, is helaas niet gevonden. Misschien ben je een verkeerde afslag genomen
 		of is er iets misgegaan tijdens het navigeren van onze tool. Probeer het opnieuw om op de juiste
@@ -38,12 +38,16 @@
 		color: var(--c-pink);
 	}
 
+	p {
+		max-width: 60em;
+	}
+
 	/* content container */
 	.content-container {
-		padding: 2em;
-		width: 50%;
+		gap: 1rem;
 		background-color: var(--c-container);
-		margin: 0.75em;
+		padding: 2em;
+		margin: 1em 0.75em;
 		border-radius: 0.5em;
 	}
 
@@ -58,15 +62,10 @@
 		color: #fff;
 		background-color: #636363;
 		border-radius: 4px;
+		transition: 0.4s;
 	}
 
 	a:hover {
-        transform: translateY(-3px)
-	}
-
-	@media only screen and (max-width: 1000px) {
-		.content-container{
-			width: 90%;
-		}
+        background-color: var(--c-magenta);
 	}
 </style>
