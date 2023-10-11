@@ -38,7 +38,7 @@
 
 	input {
 		padding: 0.5em;
-		border: 2px solid var(--c-border);
+		border: 1px solid var(--c-modal-button);
 		background-color: var(--c-container);
 		border-radius: 0.25em;
 		color: var(--c-white);
