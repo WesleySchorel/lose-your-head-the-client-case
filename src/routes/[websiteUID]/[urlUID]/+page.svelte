@@ -10,7 +10,6 @@
 
 <Heading {heading} />
 <section class="container-voortgang-1">
-	<h2>Voortgang</h2>
 	<div class="container-voortgang-2">
 		<ul>
 			<li>
@@ -89,13 +88,13 @@
 	.container-voortgang-2 {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0.75em;
 		border-radius: 0.5em;
 	}
 
     .container-voortgang-2 p {
 		font-size: 1em;
 		max-width: 16rem;
+		margin-top: .25em;
 	}
 
 	.container-voortgang-2 ul {
@@ -116,12 +115,12 @@
     /* VOORTGANG PRESTATIES */
 	.goed-bezig {
 		color: var(--c-green);
-		font-size: 1em;
+		font-size: 1.25em;
 	}
 
 	.tip {
 		color: var(--c-orange);
-		font-size: 1em;
+		font-size: 1.25em;
 	}
 
 
@@ -130,6 +129,7 @@
 
 	h3 {
 		font-size: 1.5em;
+		margin-bottom: .25em;
 	}
 
     .container-principes  ul {
@@ -151,12 +151,12 @@
 
 	.principe p {
 		font-size: 1em;
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
         width: 80%;
 	}
 
 	.principe {
-		padding: 1.5em;
+		padding: 2em;
 		background-color: var(--c-container);
 
 		border-radius: 0.5em;
