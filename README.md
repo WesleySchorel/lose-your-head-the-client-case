@@ -25,6 +25,7 @@ Wij hebben de volgende technieken en technologiën gebruikt:
 * Svelte
 * Sveltekit
 * Hygraph
+* HTML
 * JS
 * CSS
 * Figma
