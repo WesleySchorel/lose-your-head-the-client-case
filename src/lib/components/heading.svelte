@@ -7,7 +7,7 @@
 
 <section>
 	{#if heading.homepage}
-		<img width="60" src="{faviconAPI}{heading.homepage}/&size=256" alt="" />
+		<img width="60" src="{faviconAPI}{heading.homepage}/&size=128" alt="" />
 	{/if}
 	<h1>
 		{heading.titel}{#if heading.url}/{heading.url}{/if}
@@ -23,7 +23,7 @@
 		background-color: var(--c-container);
 		padding: 2em;
 		border-top: 12px solid var(--c-pink);
-		margin: 1em 0.75em;
+		margin: 1em 1em;
 		border-radius: 0.5em;
 	}
 

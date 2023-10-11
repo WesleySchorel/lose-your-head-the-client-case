@@ -1,24 +1,29 @@
 <script>
-    export let website
-    export let overzicht
-    export let params
+	export let website;
+	export let overzicht;
+	export let params;
 
-    import logoPartner from '$lib/assets/gvb.png';
 	import arrowRight from '$lib/assets/arrow_right.svg';
+
+	const faviconAPI =
+		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
 </script>
 
 <li>
 	<a href="{params}/{website.slug}">
 		<section class="logo-partner-section">
 			<div>
-				<img src={logoPartner} alt="logo partner" />
+				<img
+				height="60"
+				src="{faviconAPI}{website.url}/&size=128"
+				alt=""
+			/>
 				<h2>{overzicht.titel} <span>/{website.slug}</span></h2>
 			</div>
 			<img src={arrowRight} alt="arrow right" />
 		</section>
 
 		<section class="more-info-section">
-			<span>Website: {website.url}</span>
 			<span>Laatst bewerkt: 12 min. geleden</span>
 
 			<div class="progress-container">
@@ -30,11 +35,11 @@
 </li>
 
 <style>
-	li{
+	li {
 		display: flex;
 	}
 
-	li a{
+	li a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -57,13 +62,13 @@
 	h2 {
 		font-size: 1.5em;
 		margin-top: 0.05em;
-        color: var(--c-grey);
+		color: var(--c-grey);
 	}
 
-    span{
-        display: block;
-        color: var(--c-white);
-    }
+	span {
+		display: block;
+		color: var(--c-white);
+	}
 
 	.more-info-section {
 		display: flex;
@@ -89,13 +94,12 @@
 		/* Reset the default appearance */
 		-webkit-appearance: none;
 		appearance: none;
-		height: 50%;
+		height: 60%;
 	}
 
 	/* chrome/safari */
 	progress[value]::-webkit-progress-bar {
-		background-color: var(--c-container);
-		border: 1px solid var(--c-container-stroke);
+		background-color: var(--c-container-stroke);
 		border-radius: 0.5em;
 	}
 

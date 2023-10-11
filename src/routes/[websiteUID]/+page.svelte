@@ -41,18 +41,24 @@
 	section{
 		display: flex;
 		justify-content: space-between;
-		margin: 0 0.75em;
+		margin: 0 1em;
 		margin-bottom: 1em;
 	}
 
 	button{
 		border-radius: 0.25em;
-		padding: 0.75em 1.25em;
+		padding: 0.5em 1em;
 		color: var(--c-white);
 		background-color: var(--c-modal-button);
 		border: none;
 		font-weight: 600;
 		font-size: 1em;
+		transition: 0.3s;
+		cursor: pointer;
+	}
+
+	button:hover {
+		opacity: 0.75;
 	}
 
 	/* form */
@@ -66,22 +72,22 @@
 
 	input {
 		padding: 0.5em;
-		border: 2px solid var(--c-border);
+		border: 1px solid var(--c-modal-button);
 		background-color: var(--c-container);
 		border-radius: 0.25em;
 		color: var(--c-white);
 		width: 8.5em;
 		font-size: 1em;
 		font-weight: 600;
-		padding-left: 0.75em;
+		padding-left: .75em;
 	}
 	/* form end */
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-		gap: 0.75em;
+		gap: 1em;
 
 		list-style-type: none;
-		margin: 0 0.75em;
+		margin: 0 1em;
 	}
 </style>

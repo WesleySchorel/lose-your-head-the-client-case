@@ -39,7 +39,7 @@
 					{#if selectedPartner}
 						<img
 							width="24"
-							src="{faviconAPI}{selectedPartner.homepage}/&size=256"
+							src="{faviconAPI}{selectedPartner.homepage}/&size=128"
 							alt=""
 						/>{selectedPartner.titel}
 					{:else}

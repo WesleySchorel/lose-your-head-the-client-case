@@ -2,13 +2,14 @@
 	import Heading from '$lib/components/heading.svelte';
 	export let data;
 
-    $: heading = {titel: data.websitesData.website.titel, homepage: data.websitesData.website.homepage, url: data.urlData.url.slug}
+	console.log(data)
+
+    $: heading = {titel: data.websitesData.website.titel, homepage: data.urlData.url.url, url: data.urlData.url.slug}
 	const principes = data.principesData.principes
 </script>
 
 <Heading {heading} />
 <section class="container-voortgang-1">
-	<h2>Voortgang</h2>
 	<div class="container-voortgang-2">
 		<ul>
 			<li>
@@ -54,8 +55,8 @@
 					{principe.beschrijving.text}
 				</p>
 				<div class="progress-container">
-					<progress id="progress-partner" max="25" value="8" />
-					<label for="progress-partner">8/25</label>
+					<progress id="progress-partner" max="100" value="70" />
+					<label class="progress-percentage" for="progress-partner">70%</label>
 				</div>
 			</div>
 		</li>
@@ -80,29 +81,28 @@
 	.container-voortgang-1 {
 		background-color: var(--c-container);
 		padding: 1em 1em;
-		margin: 0.75em;
+		margin: 1em;
 		border-radius: 0.5em;
 	}
 
 	.container-voortgang-2 {
 		display: flex;
 		flex-wrap: wrap;
-		margin: 0.75em;
 		border-radius: 0.5em;
 	}
 
     .container-voortgang-2 p {
-		font-size: 1.25em;
-		padding-left: 0.25em;
+		font-size: 1em;
 		max-width: 16rem;
+		margin-top: .25em;
 	}
 
 	.container-voortgang-2 ul {
 		list-style-type: none;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.75em;
-		margin: 0.75em;
+		gap: 1em;
+		margin: 1em;
 	}
 
 	.container-voortgang-2 li {
@@ -113,41 +113,36 @@
 	}
 
     /* VOORTGANG PRESTATIES */
-
 	.goed-bezig {
 		color: var(--c-green);
 		font-size: 1.25em;
-		padding-left: 0.25em;
 	}
 
 	.tip {
 		color: var(--c-orange);
 		font-size: 1.25em;
-		padding-left: 0.25em;
 	}
 
 
 
     /* PRINCIPES */
 
-	.container-principes {
-		display: flex;
-		flex-wrap: wrap;
-		border-radius: 0.5em;
-		padding-bottom: 1em;
+	h3 {
+		font-size: 1.5em;
+		margin-bottom: .25em;
 	}
 
     .container-principes  ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(40em, 1fr));
+		gap: 1em;
+
 		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
+		margin: 0 1em;
 	}
 
 	.container-principes  li {
-		padding-bottom: 1.5em;
 		border-radius: 0.5em;
-		max-width: 50%;
-		min-width: 50%;
 	}
 
 	span {
@@ -155,28 +150,56 @@
 	}
 
 	.principe p {
-		font-size: 1.25em;
-		margin-bottom: 2rem;
+		font-size: 1em;
+		margin-bottom: 3rem;
         width: 80%;
 	}
 
 	.principe {
-		padding: 2.5em;
+		padding: 2em;
 		background-color: var(--c-container);
-		margin: 0.75em;
+
 		border-radius: 0.5em;
 		height: 100%;
 		border: solid 1px var(--c-container-stroke);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.progress-container {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-end;
 		gap: 1em;
-		margin-top: 0.25em;
+    	margin-top: 0.25em;
 	}
 
+	/* progress */
 	progress {
-		width: 80%;
+		width: 100%;
+	}
+
+	progress[value] {
+		/* Reset the default appearance */
+		-webkit-appearance: none;
+		appearance: none;
+		height: 60%;
+	}
+
+	/* chrome/safari */
+	progress[value]::-webkit-progress-bar {
+		background-color: var(--c-container-stroke);
+		border-radius: 0.5em;
+	}
+
+	progress[value]::-webkit-progress-value {
+		background-color: var(--c-pink);
+		border-radius: 0.5em;
+	}
+
+	.progress-percentage {
+		height: 85%;
 	}
 </style>
