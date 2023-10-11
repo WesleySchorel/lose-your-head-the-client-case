@@ -94,7 +94,7 @@
 	}
 
     .container-voortgang-2 p {
-		font-size: 1.25em;
+		font-size: 1em;
 		max-width: 16rem;
 	}
 
@@ -116,17 +116,21 @@
     /* VOORTGANG PRESTATIES */
 	.goed-bezig {
 		color: var(--c-green);
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 
 	.tip {
 		color: var(--c-orange);
-		font-size: 1.25em;
+		font-size: 1em;
 	}
 
 
 
     /* PRINCIPES */
+
+	h3 {
+		font-size: 1.5em;
+	}
 
     .container-principes  ul {
 		display: grid;
@@ -146,13 +150,13 @@
 	}
 
 	.principe p {
-		font-size: 1.25em;
+		font-size: 1em;
 		margin-bottom: 2rem;
         width: 80%;
 	}
 
 	.principe {
-		padding: 2.5em;
+		padding: 1.5em;
 		background-color: var(--c-container);
 
 		border-radius: 0.5em;
