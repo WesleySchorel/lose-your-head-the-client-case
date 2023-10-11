@@ -53,6 +53,12 @@
 		border: none;
 		font-weight: 600;
 		font-size: 1em;
+		transition: 0.4s;
+		cursor: pointer;
+	}
+
+	button:hover {
+		background-color: var(--c-magenta);
 	}
 
 	/* form */
