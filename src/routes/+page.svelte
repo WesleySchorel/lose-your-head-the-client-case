@@ -9,10 +9,9 @@
 	let input;
 	function submit() {
 		let websites = document.querySelectorAll('.website')
-		let names = document.querySelectorAll('.name')
 
 		websites.forEach(website => {
-			if(!websites.innerText.toUpperCase().includes(input.toUpperCase())){
+			if(!website.innerText.toUpperCase().includes(input.toUpperCase())){
 				website.classList.add('container-off');
 			}else{
 				website.classList.remove('container-off');
