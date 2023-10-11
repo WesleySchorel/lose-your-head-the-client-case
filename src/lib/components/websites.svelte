@@ -125,7 +125,7 @@
 	progress[value]::-webkit-progress-value {
 		background-color: var(--c-pink);
 		border-radius: 0.5em;
-		transition: 2s ease-out;
+		transition: 1s ease-out;
 	}
 
 	.progress-percentage {
