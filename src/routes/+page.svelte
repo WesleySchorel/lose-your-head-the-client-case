@@ -4,23 +4,39 @@
 	export let data;
 
 	let heading = { titel: 'Partners overzicht' };
+
+	// form submit
+	let input = '';
+	let allWebsites;
+
+	function submit() {
+		console.log(input.toUpperCase());
+		console.log(allWebsites)
+		// let studentContainer = document.querySelectorAll('.member');
+			// // selecteer input
+			// let input = document.querySelector('input').value.toUpperCase();
+
+			// for (let i = 0; i < studentContainer.length; i++) {
+			// 	// if studentcontainer h2 doesnt include input => make the containers invisible
+			// 	if (!studentContainer[i].innerText.toUpperCase().includes(input)) {
+			// 		studentContainer[i].classList.add('container-off');
+			// 	} else {
+			// 		studentContainer[i].classList.remove('container-off');
+			// 	}
+			// }
+	}
 </script>
 
 <Heading {heading} />
 
-<form>
+<form on:submit|preventDefault={submit}>
 	<label for="partner-search">Zoek een partner</label>
-	<input
-		type="search"
-		id="partner-search"
-		placeholder="Connexxion"
-		on:input={(e) => console.log(e)}
-	/>
+	<input type="search" id="partner-search" placeholder="Connexxion" bind:value={input} />
 </form>
 
-<ul>
+<ul bind:this={allWebsites}>
 	{#each data.websites as website}
-		<Partner {website} />
+		<Partner {website}/>
 	{/each}
 </ul>
 
