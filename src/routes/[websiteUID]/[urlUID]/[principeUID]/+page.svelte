@@ -9,13 +9,14 @@
 	};
 
 	const toolboardData = data.toolboardData;
-	const richtlijnen = toolboardData.principe.richtlijnen
+	const richtlijnen = toolboardData.principe.richtlijnen;
+	let checked
 
-	const succescriteria = toolboardData.url.checks[0]
+	const checkedSuccescriteria = toolboardData.url.checks[0]
 		? toolboardData.url.checks[0].succescriteria
 		: [];
 
-	console.log(richtlijnen);
+	console.log(checkedSuccescriteria);
 </script>
 
 <Heading {heading} />
@@ -24,18 +25,16 @@
 		<section>
 			<h2>{richtlijn.titel}</h2>
 			{#each richtlijn.succescriteria as succescriterium}
-			<label>
-
-				<h3>{succescriterium.titel}</h3>
-				<p>{succescriterium.index}</p>
-				<p>{succescriterium.id}</p>
-				<input type="checkbox" id={succescriterium.id}>
-			</label>
+				<label>
+					<h3>{succescriterium.titel}</h3>
+					<p>{succescriterium.index}</p>
+					<p>{succescriterium.id}</p>
+					<input type="checkbox" checked={checkedSuccescriteria.find(e => e.id === succescriterium.id)}>
+				</label>
 			{/each}
 		</section>
 	{/each}
 </form>
-
 
 <style>
 	section {
