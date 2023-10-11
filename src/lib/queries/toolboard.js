@@ -14,12 +14,16 @@ export default function getQueryToolboard(gql, slugUrl, principeSlug){
         }
         principe(where: {slug: "${principeSlug}"}) {
           titel
+          beschrijving {
+            html
+          }
           richtlijnen {
             titel
             succescriteria {
               id
               titel
               index
+              niveau
             }
             index
             slug
