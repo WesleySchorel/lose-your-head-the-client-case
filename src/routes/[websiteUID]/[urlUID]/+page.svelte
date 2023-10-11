@@ -163,6 +163,14 @@
 		justify-content: space-between;
 	}
 
+	.progress-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+		gap: 1em;
+    	margin-top: 0.25em;
+	}
 
 	/* progress */
 	progress {
