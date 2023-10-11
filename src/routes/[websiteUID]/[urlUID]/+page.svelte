@@ -56,8 +56,8 @@
 					{principe.beschrijving.text}
 				</p>
 				<div class="progress-container">
-					<progress id="progress-partner" max="25" value="8" />
-					<label for="progress-partner">8/25</label>
+					<progress id="progress-partner" max="100" value="70" />
+					<label class="progress-percentage" for="progress-partner">70%</label>
 				</div>
 			</div>
 		</li>
@@ -115,7 +115,6 @@
 	}
 
     /* VOORTGANG PRESTATIES */
-
 	.goed-bezig {
 		color: var(--c-green);
 		font-size: 1.25em;
@@ -131,7 +130,6 @@
 
 
     /* PRINCIPES */
-
 	.container-principes {
 		display: flex;
 		flex-wrap: wrap;
@@ -169,16 +167,45 @@
 		border-radius: 0.5em;
 		height: 100%;
 		border: solid 1px var(--c-container-stroke);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
+	/* progress bar */
 	.progress-container {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-end;
 		gap: 1em;
 		margin-top: 0.25em;
 	}
 
+	/* progress */
 	progress {
-		width: 80%;
+		width: 100%;
+	}
+
+	progress[value] {
+		/* Reset the default appearance */
+		-webkit-appearance: none;
+		appearance: none;
+		height: 60%;
+	}
+
+	/* chrome/safari */
+	progress[value]::-webkit-progress-bar {
+		background-color: var(--c-container-stroke);
+		border-radius: 0.5em;
+	}
+
+	progress[value]::-webkit-progress-value {
+		background-color: var(--c-pink);
+		border-radius: 0.5em;
+	}
+
+	.progress-percentage {
+		height: 85%;
 	}
 </style>

@@ -87,13 +87,12 @@
 		/* Reset the default appearance */
 		-webkit-appearance: none;
 		appearance: none;
-		height: 50%;
+		height: 60%;
 	}
 
 	/* chrome/safari */
 	progress[value]::-webkit-progress-bar {
-		background-color: var(--c-container);
-		border: 1px solid var(--c-container-stroke);
+		background-color: var(--c-container-stroke);
 		border-radius: 0.5em;
 	}
 
