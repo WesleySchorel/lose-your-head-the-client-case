@@ -2,7 +2,9 @@
 	import Heading from '$lib/components/heading.svelte';
 	export let data;
 
-    $: heading = {titel: data.websitesData.website.titel, homepage: data.websitesData.website.homepage, url: data.urlData.url.slug}
+	console.log(data)
+
+    $: heading = {titel: data.websitesData.website.titel, homepage: data.urlData.url.url, url: data.urlData.url.slug}
 	const principes = data.principesData.principes
 </script>
 
@@ -54,8 +56,8 @@
 					{principe.beschrijving.text}
 				</p>
 				<div class="progress-container">
-					<progress id="progress-partner" max="25" value="8" />
-					<label for="progress-partner">8/25</label>
+					<progress id="progress-partner" max="100" value="70" />
+					<label class="progress-percentage" for="progress-partner">70%</label>
 				</div>
 			</div>
 		</li>
@@ -80,7 +82,7 @@
 	.container-voortgang-1 {
 		background-color: var(--c-container);
 		padding: 1em 1em;
-		margin: 0.75em;
+		margin: 1em;
 		border-radius: 0.5em;
 	}
 
@@ -93,7 +95,6 @@
 
     .container-voortgang-2 p {
 		font-size: 1.25em;
-		padding-left: 0.25em;
 		max-width: 16rem;
 	}
 
@@ -101,8 +102,8 @@
 		list-style-type: none;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.75em;
-		margin: 0.75em;
+		gap: 1em;
+		margin: 1em;
 	}
 
 	.container-voortgang-2 li {
@@ -113,41 +114,31 @@
 	}
 
     /* VOORTGANG PRESTATIES */
-
 	.goed-bezig {
 		color: var(--c-green);
 		font-size: 1.25em;
-		padding-left: 0.25em;
 	}
 
 	.tip {
 		color: var(--c-orange);
 		font-size: 1.25em;
-		padding-left: 0.25em;
 	}
 
 
 
     /* PRINCIPES */
 
-	.container-principes {
-		display: flex;
-		flex-wrap: wrap;
-		border-radius: 0.5em;
-		padding-bottom: 1em;
-	}
-
     .container-principes  ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(40em, 1fr));
+		gap: 1em;
+
 		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
+		margin: 0 1em;
 	}
 
 	.container-principes  li {
-		padding-bottom: 1em;
 		border-radius: 0.5em;
-		max-width: 50%;
-		min-width: 50%;
 	}
 
 	span {
@@ -163,21 +154,48 @@
 	.principe {
 		padding: 2.5em;
 		background-color: var(--c-container);
-		/* border-top: 12px solid var(--c-pink); */
-		margin: 0.75em;
+
 		border-radius: 0.5em;
 		height: 100%;
-
+		border: solid 1px var(--c-container-stroke);
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
 
 	.progress-container {
 		display: flex;
+		flex-direction: row;
 		justify-content: space-between;
+		align-items: flex-end;
 		gap: 1em;
-		margin-top: 0.25em;
+    	margin-top: 0.25em;
 	}
 
+	/* progress */
 	progress {
-		width: 80%;
+		width: 100%;
+	}
+
+	progress[value] {
+		/* Reset the default appearance */
+		-webkit-appearance: none;
+		appearance: none;
+		height: 60%;
+	}
+
+	/* chrome/safari */
+	progress[value]::-webkit-progress-bar {
+		background-color: var(--c-container-stroke);
+		border-radius: 0.5em;
+	}
+
+	progress[value]::-webkit-progress-value {
+		background-color: var(--c-pink);
+		border-radius: 0.5em;
+	}
+
+	.progress-percentage {
+		height: 85%;
 	}
 </style>

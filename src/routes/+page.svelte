@@ -27,7 +27,7 @@
 <style>
 	/* form */
 	form {
-		margin: 0 0.75em;
+		margin: 0 1em;
 		margin-bottom: 1em;
 		display: flex;
 		justify-content: flex-end;
@@ -38,7 +38,7 @@
 
 	input {
 		padding: 0.5em;
-		border: 2px solid var(--c-border);
+		border: 1px solid var(--c-modal-button);
 		background-color: var(--c-container);
 		border-radius: 0.25em;
 		color: var(--c-white);
@@ -51,9 +51,9 @@
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-		gap: 0.75em;
-		
+		gap: 1em;
+
 		list-style-type: none;
-		margin: 0 0.75em;
+		margin: 0 1em;
 	}
 </style>
