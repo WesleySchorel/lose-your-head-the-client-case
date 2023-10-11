@@ -41,7 +41,7 @@
 	section{
 		display: flex;
 		justify-content: space-between;
-		margin: 0 0.75em;
+		margin: 0 1em;
 		margin-bottom: 1em;
 	}
 
@@ -79,15 +79,15 @@
 		width: 8.5em;
 		font-size: 1em;
 		font-weight: 600;
-		padding-left: 0.75em;
+		padding-left: .75em;
 	}
 	/* form end */
 	ul {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
-		gap: 0.75em;
+		gap: 1em;
 
 		list-style-type: none;
-		margin: 0 0.75em;
+		margin: 0 1em;
 	}
 </style>

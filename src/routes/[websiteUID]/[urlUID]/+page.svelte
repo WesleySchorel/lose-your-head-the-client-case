@@ -82,7 +82,7 @@
 	.container-voortgang-1 {
 		background-color: var(--c-container);
 		padding: 1em 1em;
-		margin: 0.75em;
+		margin: 1em;
 		border-radius: 0.5em;
 	}
 
@@ -95,7 +95,6 @@
 
     .container-voortgang-2 p {
 		font-size: 1.25em;
-		padding-left: 0.25em;
 		max-width: 16rem;
 	}
 
@@ -103,8 +102,8 @@
 		list-style-type: none;
 		display: flex;
 		flex-wrap: wrap;
-		gap: 0.75em;
-		margin: 0.75em;
+		gap: 1em;
+		margin: 1em;
 	}
 
 	.container-voortgang-2 li {
@@ -118,36 +117,28 @@
 	.goed-bezig {
 		color: var(--c-green);
 		font-size: 1.25em;
-		padding-left: 0.25em;
 	}
 
 	.tip {
 		color: var(--c-orange);
 		font-size: 1.25em;
-		padding-left: 0.25em;
 	}
 
 
 
     /* PRINCIPES */
-	.container-principes {
-		display: flex;
-		flex-wrap: wrap;
-		border-radius: 0.5em;
-		padding-bottom: 1em;
-	}
 
     .container-principes  ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(40em, 1fr));
+		gap: 1em;
+
 		list-style-type: none;
-		display: flex;
-		flex-wrap: wrap;
+		margin: 0 1em;
 	}
 
 	.container-principes  li {
-		padding-bottom: 1.5em;
 		border-radius: 0.5em;
-		max-width: 50%;
-		min-width: 50%;
 	}
 
 	span {
@@ -163,7 +154,7 @@
 	.principe {
 		padding: 2.5em;
 		background-color: var(--c-container);
-		margin: 0.75em;
+
 		border-radius: 0.5em;
 		height: 100%;
 		border: solid 1px var(--c-container-stroke);
@@ -172,15 +163,6 @@
 		justify-content: space-between;
 	}
 
-	/* progress bar */
-	.progress-container {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: flex-end;
-		gap: 1em;
-		margin-top: 0.25em;
-	}
 
 	/* progress */
 	progress {
