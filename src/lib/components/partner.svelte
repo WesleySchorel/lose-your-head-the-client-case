@@ -1,15 +1,21 @@
 <script>
 	export let website;
 
-	import logoPartner from '$lib/assets/gvb.png';
 	import arrowRight from '$lib/assets/arrow_right.svg';
+
+	const faviconAPI =
+		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
 </script>
 
 <li>
 	<a href={website.slug}>
 		<section class="logo-partner-section">
 			<div>
-				<img src={logoPartner} alt="logo partner" />
+				<img
+				height="60"
+				src="{faviconAPI}{website.homepage}/&size=128"
+				alt=""
+			/>
 				<h2>{website.titel}</h2>
 			</div>
 			<img src={arrowRight} alt="arrow right" />
@@ -28,11 +34,11 @@
 </li>
 
 <style>
-	li{
+	li {
 		display: flex;
 	}
 
-	li a{
+	li a {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -81,13 +87,12 @@
 		/* Reset the default appearance */
 		-webkit-appearance: none;
 		appearance: none;
-		height: 50%;
+		height: 60%;
 	}
 
 	/* chrome/safari */
 	progress[value]::-webkit-progress-bar {
-		background-color: var(--c-container);
-		border: 1px solid var(--c-container-stroke);
+		background-color: var(--c-container-stroke);
 		border-radius: 0.5em;
 	}
 

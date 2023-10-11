@@ -7,7 +7,7 @@
 
 <section>
 	{#if heading.homepage}
-		<img width="60" src="{faviconAPI}{heading.homepage}/&size=256" alt="" />
+		<img width="60" src="{faviconAPI}{heading.homepage}/&size=128" alt="" />
 	{/if}
 	<h1>
 		{heading.titel}{#if heading.url}/{heading.url}{/if}
