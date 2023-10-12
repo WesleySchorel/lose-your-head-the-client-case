@@ -4,18 +4,27 @@
 	export let data;
 
 	let heading = { titel: 'Partners overzicht' };
+
+	// form submit
+	let input;
+	function submit() {
+		let websites = document.querySelectorAll('.website')
+
+		websites.forEach(website => {
+			if(!website.innerText.toUpperCase().includes(input.toUpperCase())){
+				website.classList.add('container-off');
+			}else{
+				website.classList.remove('container-off');
+			}
+		});
+	}
 </script>
 
 <Heading {heading} />
 
-<form>
+<form on:submit|preventDefault={submit}>
 	<label for="partner-search">Zoek een partner</label>
-	<input
-		type="search"
-		id="partner-search"
-		placeholder="Connexxion"
-		on:input={(e) => console.log(e)}
-	/>
+	<input type="search" id="partner-search" placeholder="Connexxion" bind:value={input} />
 </form>
 
 <ul>

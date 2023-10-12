@@ -17,9 +17,12 @@
 	});
 	const faviconAPI =
 		'https://t1.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=';
+
+		// search, zo maakt sveltekit gebruik van de class
+		let containerOff = false
 </script>
 
-<li>
+<li class="website" class:container-off={containerOff}>
 	<a href={website.slug}>
 		<section class="logo-partner-section">
 			<div>
@@ -28,7 +31,7 @@
 				src="{faviconAPI}{website.homepage}/&size=128"
 				alt=""
 			/>
-				<h2>{website.titel}</h2>
+				<h2 class="name">{website.titel}</h2>
 			</div>
 			<img src={arrowRight} alt="arrow right" />
 		</section>
@@ -120,5 +123,10 @@
 
 	.progress-percentage {
 		height: 85%;
+	}
+
+	/* search css */
+	.container-off{
+		display: none;
 	}
 </style>
