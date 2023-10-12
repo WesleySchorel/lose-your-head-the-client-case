@@ -1,5 +1,7 @@
 <script>
 	import Heading from '$lib/components/heading.svelte';
+	import { page } from '$app/stores' ;
+
 	export let data;
 
 	console.log(data)
@@ -49,16 +51,18 @@
 	<ul>
 		{#each principes as principe (principe.index)}
 		<li>
-			<div class="principe">
-				<h3><span>{principe.titel}. </span> Principe {principe.index}</h3>
-				<p>
-					{principe.beschrijving.text}
-				</p>
-				<div class="progress-container">
-					<progress id="progress-partner" max="100" value="70" />
-					<label class="progress-percentage" for="progress-partner">70%</label>
+			<a href="{$page.url.pathname}/{principe.slug}">
+				<div class="principe">
+					<h3><span>{principe.titel}. </span> Principe {principe.index}</h3>
+					<p>
+						{principe.beschrijving.text}
+					</p>
+					<div class="progress-container">
+						<progress id="progress-partner" max="100" value="70" />
+						<label class="progress-percentage" for="progress-partner">70%</label>
+					</div>
 				</div>
-			</div>
+			</a>
 		</li>
 		{/each}
 	</ul>
@@ -103,6 +107,11 @@
 		padding: 1em;
 		border-radius: 0.5em;
 		min-width: 16em;
+	}
+
+	li a {
+		text-decoration: none;
+		color: inherit;
 	}
 
     /* VOORTGANG PRESTATIES */
