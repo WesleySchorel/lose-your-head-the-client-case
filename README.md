@@ -1,6 +1,6 @@
 # Vervoerregio Amsterdam | Sprint 14
 
-Live link: 
+Live link: [toolgankelijk.netlify.app/](https://toolgankelijk.netlify.app/)
 
 ## Inhoudsopgave
 
@@ -14,8 +14,7 @@ Live link:
 
 De Toolgankelijkheid website voor Vervoerregio Amsterdam waarmee medewerkers intern hun partners kunnen controleren op de toegankelijkheid van hun websites. 
 
-![Overview](https://github.com/WesleySchorel/lose-your-head-the-client-case/assets/112856287/b8584841-9648-4ee1-9f25-78a5951d33ae)
-
+![image](https://github.com/WesleySchorel/lose-your-head-the-client-case/assets/112857487/3044aca6-4b97-42b7-bc4d-501c73ca8a4a)
 
 ## Kenmerken
 
@@ -26,6 +25,7 @@ Wij hebben de volgende technieken en technologiën gebruikt:
 * Svelte
 * Sveltekit
 * Hygraph
+* HTML
 * JS
 * CSS
 * Figma
