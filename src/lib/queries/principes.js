@@ -6,6 +6,7 @@ export default function getQueryPrincipes(gql){
             text
           }
           titel
+          slug
           index
           checklistItems {
             check
