@@ -18,7 +18,7 @@ De Toolgankelijkheid website voor Vervoerregio Amsterdam waarmee medewerkers int
 
 ## Kenmerken
 
-Dit project is ontwikkeld door middel van Sveltekit. De inhoud wordt opgehaald door middel van een query uit Hygraph. De code wordt gehost op github en vervolgens door middel van Vercel live gezet. De code wordt gehost op GitHub. De live-versie van de website is beschikbaar op Vercel. Vercel is geïntegreerd met de GitHub Repository en genereert automatisch een nieuwe versie van de applicatie bij elke update op de main.
+Dit project is ontwikkeld door middel van Sveltekit. De inhoud wordt opgehaald door middel van een query uit Hygraph. De code wordt gehost op github en vervolgens door middel van Vercel live gezet. De code wordt gehost op GitHub. De live-versie van de website is beschikbaar op Netlify. Netlify is geïntegreerd met de GitHub Repository en genereert automatisch een nieuwe versie van de applicatie bij elke update op de main.
 
 Wij hebben de volgende technieken en technologiën gebruikt:
 
