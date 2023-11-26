@@ -134,7 +134,7 @@
 		height: 3.5rem;
 		text-align: left;
 		box-shadow: 0px -20px 0px 0px #202020;
-		transition: .2s;
+		transition: 0.2s;
 	}
 
 	button::after {
@@ -171,7 +171,7 @@
 		border-radius: 0 0 0.5em 0.5em;
 		overflow: hidden;
 		transform: translateY(-100%);
-		transition: .2s;
+		transition: 0.2s;
 		z-index: -1;
 	}
 
@@ -242,5 +242,15 @@
 
 	.information-icon-img {
 		display: block;
+	}
+
+	/* media queries for mobile */
+	@media (max-width: 640px) {
+		nav{
+			padding: 1.55em 1em;
+		}
+		.dropdown {
+			display: none;
+		}
 	}
 </style>
